@@ -45,7 +45,7 @@ jspm_packages/
 upload/
 temp/
 temp
-
+public/img
 # TypeScript v1 declaration files
 typings/
 

@@ -1,0 +1,38 @@
+<!-- ./views/index.handlebars -->
+<div class="container mt-5">
+  <!-- search bar -->
+  <div class="row" id="search-bar">
+    <div class="col-12">
+      <form action="/search">
+        <div class="input-group mb-3">
+          <input type="text" name="keyword" value="{{keyword}}" class="form-control" placeholder="Enter movie name to search..."
+            aria-label="Movie Name..." aria-describedby="search-button">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit" id="search-button">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- movie list -->
+  <div class="row" id="data-panel">
+      {{#each movieJson}}
+      <div class="col-sm-3">
+        <div class="mb-2">
+          <div class="card">
+            <img src="img/{{this.movieImg}}" class="card-img-top"
+              alt="Movie Poster">
+            <div class="card-body">
+              <h5 class="card-title">{{this.movieTitle}}</h5>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-primary btn-show-movie" data-toggle="modal" data-target="#movie-modal"
+                data-id="1">More</button>
+              <button class="btn btn-info btn-add-favorite" data-id="1">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+      </div>
+  </div>

@@ -11,7 +11,7 @@ const handlebars = require('express-handlebars')
 
 app.use(express.static('public'))
 
-app.use('/img', express.static(__dirname + '/Img'))
+// app.use('/img', express.static(__dirname + '/Img'))
 
 app.engine(
   'handlebars',

@@ -1,15 +1,14 @@
 const puppeteer = require('puppeteer')
 const jsonfile = require('jsonfile')
 const download = require('download')
-const multer = require('multer')
-const upload = multer({ dest: 'img/' })
-const movieJson ='./json/movies.json'
+const movieJson ='./public/json/movies.json'
 const fs = require('fs')
 const movieDatas = []
 const moment = require('moment')
 const momentDay = moment().format('L')
 const splitMomentDay = momentDay.split('/')
-async function movie() {
+
+async function movieScraper() {
   try {
     fs.rm('img', { recursive: true },function (err) {
       if (err) {
@@ -18,15 +17,18 @@ async function movie() {
         fs.mkdirSync('img')
       }
     })
+    console.log("載入網頁中...")
     const browser = await puppeteer.launch({
-      // headless: false
+      headless: false,
     })
     const page = await browser.newPage()
+
     await page.goto(`https://movie.gamme.com.tw/mtime/%E6%96%B0%E5%8C%97/0/43/${splitMomentDay[0]}${splitMomentDay[1]}`, {
       waitUntil: 'networkidle0'
     })
     // await page.waitForTimeout(3000)
-    page.$$eval('.timeTable2', e => e.map(e => e.querySelector('a').href))
+    const movieTime =  await page.$$eval('.bottom > ul ', e => e.map(e => e.outerHTML))
+    await page.$$eval('.timeTable2', e => e.map(e => e.querySelector('a').href))
       .then(async (m) => {
         for (i = 0; i < m.length; i++) {
           const url = m[i]
@@ -34,9 +36,11 @@ async function movie() {
           let imgUrl = ''
           await page.goto(`${url}`)
         
-          console.log(`抓取第${i}個檔案`)
-
+          // console.log(`抓取第${i}個檔案`)
+          
           movieData.id = i
+          
+          movieData.time = movieTime[i]
 
           imgUrl = await page.$eval('.poster', e => e.querySelector('img[title]').src)
           
@@ -51,7 +55,7 @@ async function movie() {
           movieData.stars = await page.$eval('.filmCast', e => e.querySelectorAll('p')[3].innerText)
 
           movieData.date = await page.$eval('.right', e => e.querySelector('.keys').querySelector('.date').innerText)
-
+          
           movieData.movieTitle = await page.$eval('.right', e => e.querySelector('h2').innerText)
 
           movieData.subMovieTitle = await page.$eval('.right', e => e.querySelector('h3').innerText)
@@ -82,4 +86,5 @@ async function movie() {
     console.log(err)
   }
 }
-movie()
+
+movieScraper()

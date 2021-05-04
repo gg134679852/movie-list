@@ -7,4 +7,6 @@ router.get('/',(req, res) => {
 });
 router.get('/movieList',movieListControllers.getMovie)
 
+router.get('/movieList/:id/detailed', movieListControllers.movieDetailed)
+
 module.exports = router

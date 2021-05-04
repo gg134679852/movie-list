@@ -1,6 +1,7 @@
 [
   {
     "id": 0,
+    "time": "<ul>\n<li>10:00</li>\n<li>12:25</li>\n<li>16:25</li>\n<li>20:35</li>\n<li>23:45</li>\n</ul>",
     "movieImg": "mZman6CcmJ6hqp2W-220x315.jpg",
     "movieGenres": "類型\t\n劇情",
     "director": "導演\t\n徐有玟(Yu-min Seo)",
@@ -20,6 +21,7 @@
   },
   {
     "id": 1,
+    "time": "<ul>\n<li>13:15</li>\n</ul>",
     "movieImg": "mZqUnp2Yl6OoqZyW-220x315.jpg",
     "movieGenres": "類型\t\n冒險、劇情",
     "director": "導演\t\n彼得傑克森(Peter Jackson)",
@@ -35,6 +37,7 @@
   },
   {
     "id": 2,
+    "time": "<ul>\n<li>09:40</li>\n<li>22:40</li>\n</ul>",
     "movieImg": "mZiUnaCYl6OorqGW-220x315.jpg",
     "movieGenres": "類型\t\n劇情",
     "director": "導演\t\n彼得傑克森(Peter Jackson)",
@@ -56,6 +59,7 @@
   },
   {
     "id": 3,
+    "time": "<ul>\n<li>19:00</li>\n</ul>",
     "movieImg": "mZqUnqOYl6Shr5mW-220x315.jpg",
     "movieGenres": "類型\t\n冒險、劇情",
     "director": "導演\t\n彼得傑克森(Peter Jackson)",
@@ -70,6 +74,7 @@
   },
   {
     "id": 4,
+    "time": "<ul>\n<li>13:15</li>\n<li>21:25</li>\n</ul>",
     "movieImg": "mZqSn6SelJ_mr6GW-220x315.jpg",
     "movieGenres": "類型\t\n科幻、冒險、懸疑、驚悚",
     "director": "導演\t\n尼爾柏格(Neil Burger)",
@@ -88,6 +93,7 @@
   },
   {
     "id": 5,
+    "time": "<ul>\n<li>10:15</li>\n<li>12:30</li>\n<li>13:45</li>\n<li>14:45</li>\n<li>17:00</li>\n<li>19:15</li>\n<li>20:30</li>\n<li>21:30</li>\n<li>22:45</li>\n<li>23:45</li>\n</ul>",
     "movieImg": "mZmZoaWel6afppqW-220x315.jpeg",
     "movieGenres": "類型\t\n動作、劇情",
     "director": "導演\t\n蓋·瑞奇(Guy Ritchie)",
@@ -107,6 +113,7 @@
   },
   {
     "id": 6,
+    "time": "<ul>\n<li>11:30</li>\n</ul>",
     "movieImg": "mZmWoKOYmKSirJ_W-220x315.JPG",
     "movieGenres": "類型\t\n動作、劇情",
     "director": "主要演員\t\n西島秀俊(Hidetoshi Nishijima) 、綾瀨遙(Haruka Ayase)",
@@ -121,6 +128,7 @@
   },
   {
     "id": 7,
+    "time": "<ul>\n<li>16:55</li>\n</ul>",
     "movieImg": "mZqRpqSek56fq6GW-220x315.jpg",
     "movieGenres": "類型\t\n劇情",
     "director": "導演\t\n夏卡·金(Shaka King)",
@@ -135,6 +143,7 @@
   },
   {
     "id": 8,
+    "time": "<ul>\n<li>09:45</li>\n<li>15:20</li>\n<li>19:30</li>\n</ul>",
     "movieImg": "mZmSn5_YmKGnpqCW-220x315.jpg",
     "movieGenres": "類型\t\n劇情",
     "director": "導演\t\n費洛里安·齊勒(Florian Zeller)",
@@ -149,6 +158,7 @@
   },
   {
     "id": 9,
+    "time": "<ul>\n<li>17:15</li>\n</ul>",
     "movieImg": "mZiZoqWWlKSnqp6X-220x315.jpg",
     "movieGenres": "類型\t\n動作、劇情",
     "director": "導演\t\n尼古拉斯·傑雷基(Nicholas Jarecki)",
@@ -172,6 +182,7 @@
   },
   {
     "id": 10,
+    "time": "<ul>\n<li>09:40</li>\n</ul>",
     "movieImg": "mZmZnp_el56oq5_b-220x315.jpg",
     "movieGenres": "類型\t\n動作",
     "director": "導演\t\n喬治蓋洛(George Gallo)",
@@ -191,6 +202,7 @@
   },
   {
     "id": 11,
+    "time": "<ul>\n<li>10:05</li>\n<li>14:30</li>\n<li>16:45</li>\n<li>19:05</li>\n<li>21:15</li>\n</ul>",
     "movieImg": "mZmTn6SelZ_gr5mW-220x315.JPG",
     "movieGenres": "類型\t\n懸疑、動作、動畫",
     "director": "導演\t\n永岡智佳(Tomoka Nagaoka)",
@@ -205,6 +217,7 @@
   },
   {
     "id": 12,
+    "time": "<ul>\n<li>10:10</li>\n<li>14:10</li>\n<li>16:20</li>\n<li>18:30</li>\n<li>20:40</li>\n<li>23:30</li>\n</ul>",
     "movieImg": "mZmRpp_cmKOgrZmW-220x315.JPG",
     "movieGenres": "類型\t\n溫馨、勵志",
     "director": "導演\t\n楊智麟(Zhilin Yang)",
@@ -220,6 +233,7 @@
   },
   {
     "id": 13,
+    "time": "<ul>\n<li>18:25</li>\n</ul>",
     "movieImg": "mZmSoqKek6anrJqW-220x315.jpg",
     "movieGenres": "類型\t\n溫馨、勵志",
     "director": "導演\t\n鄭李爍(Lee Isaac Chung)",
@@ -235,6 +249,7 @@
   },
   {
     "id": 14,
+    "time": "<ul>\n<li>12:15</li>\n<li>18:20</li>\n<li>23:25</li>\n</ul>",
     "movieImg": "mJ_apaSclqKjq5mY-220x315.jpg",
     "movieGenres": "類型\t\n動作、劇情",
     "director": "導演\t\n李勇周",
@@ -255,6 +270,7 @@
   },
   {
     "id": 15,
+    "time": "<ul>\n<li>22:30</li>\n</ul>",
     "movieImg": "mZiXn6SVlaWkr5qW-220x315.jpg",
     "movieGenres": "類型\t\n冒險、動作",
     "director": "導演\t\n賽門麥奎德(Simon McQuoid)",
@@ -271,6 +287,7 @@
   },
   {
     "id": 16,
+    "time": "<ul>\n<li>10:50</li>\n<li>12:00</li>\n<li>13:00</li>\n<li>15:10</li>\n<li>16:10</li>\n<li>17:20</li>\n<li>19:30</li>\n<li>21:40</li>\n<li>23:50</li>\n</ul>",
     "movieImg": "mZiXnp_WlqCmq6CW-220x315.jpg",
     "movieGenres": "類型\t\n愛情、劇情",
     "director": "導演\t\n殷振豪",
@@ -287,6 +304,7 @@
   },
   {
     "id": 17,
+    "time": "<ul>\n<li>16:50</li>\n</ul>",
     "movieImg": "mZiXoKOVlp6ipp_W-220x315.jpg",
     "movieGenres": "類型\t\n科幻、懸疑、動作、驚悚",
     "director": "導演\t\n亞當溫高德(Adam Wingard)",
@@ -303,6 +321,7 @@
   },
   {
     "id": 18,
+    "time": "<ul>\n<li>21:35</li>\n</ul>",
     "movieImg": "mZiTpKCclqWfrqGX-220x315.jpg",
     "movieGenres": "類型\t\n劇情",
     "director": "導演\t\n趙婷(Chloe Zhao)",

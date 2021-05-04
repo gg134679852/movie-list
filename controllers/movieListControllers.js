@@ -1,8 +1,13 @@
 const movieJson = require('../public/json/movies.json')
 const movieListControllers = {
-  getMovie: (req, res) => {
+  getMovie: async (req, res) => {
     res.render('movieList', {movieJson})
-    }
+    },
+  movieDetailed: (req, res)=>{
+    const index = req.params.id
+    const renderData = movieJson[index]
+    res.render('show', { renderData })
+  }
     // res.render('movieList', { movies: movieList.results })
 // app.get('/movies/:movie_id', (req, res) => {
 //   const movie = movieList.results.find(movie => movie.id.toString() === req.params.movie_id)

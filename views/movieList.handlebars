@@ -1,7 +1,7 @@
 <!-- ./views/index.handlebars -->
 <div class="container mt-5">
   <!-- search bar -->
-  <div class="row" id="search-bar">
+  {{!-- <div class="row" id="search-bar">
     <div class="col-12">
       <form action="/search">
         <div class="input-group mb-3">
@@ -13,14 +13,14 @@
         </div>
       </form>
     </div>
-  </div>
+  </div> --}}
   <!-- movie list -->
   <div class="row" id="data-panel">
       {{#each movieJson}}
       <div class="col-sm-3">
         <div class="mb-2">
           <div class="card">
-            <img src="img/{{this.movieImg}}" class="card-img-top"
+            <img src="/img/{{this.movieImg}}" class="card-img-top"
               alt="Movie Poster"
               with="500" heigh="750">
             <div class="card-body">
@@ -30,7 +30,7 @@
               <a href="/movieList/{{this.id}}/detailed">
                 <button class="btn btn-primary btn-show-movie">More</button>
               </a>
-              <button class="btn btn-info btn-add-favorite" data-id="1">+</button>
+              {{!-- <button class="btn btn-info btn-add-favorite" data-id="1">+</button> --}}
             </div>
           </div>
         </div>

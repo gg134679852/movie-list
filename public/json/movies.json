@@ -1,12 +1,29 @@
 [
   {
     "id": 0,
-    "time": "<ul>\n<li>10:00</li>\n<li>12:25</li>\n<li>16:25</li>\n<li>20:35</li>\n<li>23:45</li>\n</ul>",
+    "time": "<ul>\n<li>08:50</li>\n<li>09:50</li>\n<li>11:45</li>\n<li>13:40</li>\n<li>15:35</li>\n<li>17:30</li>\n<li>18:25</li>\n<li>19:25</li>\n<li>21:20</li>\n<li>22:20</li>\n<li>23:15</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
+    "movieImg": "mZqSnaaXj6KkqZuW-220x315.JPG",
+    "movieGenres": "懸疑、動作、劇情、驚悚",
+    "date": "2021-05-06",
+    "director": "泰勒謝里丹(Taylor Sheridan)",
+    "stars": "安潔莉娜裘莉(Angelina Jolie) 、尼可拉斯·霍特(Nicholas Hoult) 、強·柏恩瑟 (Jon Bernthal)",
+    "movieTitle": "那些要我死的人",
+    "subMovieTitle": "Those Who Wish Me Dead",
+    "description": [
+      "導演泰勒謝里丹作品，安潔莉娜裘莉​、尼可拉斯霍特​主演。一名親眼目睹家人被殺的青少年，在蒙大拿森林中遇見擁有絕佳生存知識的漢娜。然而，他們面對的不只是冷酷的追兵，還是一場森林大火的威脅。"
+    ],
+    "trailer": "https://www.youtube.com/embed/K04KdK8REpE"
+  },
+  {
+    "id": 1,
+    "time": "<ul>\n<li>09:05</li>\n<li>14:40</li>\n<li>19:00</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
     "movieImg": "mZman6CcmJ6hqp2W-220x315.jpg",
-    "movieGenres": "類型\t\n劇情",
-    "director": "導演\t\n徐有玟(Yu-min Seo)",
-    "stars": "主要演員\t\n徐睿知 、金剛于",
-    "date": "上映日期：2021-04-29",
+    "movieGenres": "劇情",
+    "date": "2021-04-29",
+    "director": "徐有玟(Yu-min Seo)",
+    "stars": "徐睿知 、金剛于",
     "movieTitle": "迴憶",
     "subMovieTitle": "Recalled",
     "description": [
@@ -20,29 +37,14 @@
     "trailer": "https://www.youtube.com/embed/2BlZWzmsNF8"
   },
   {
-    "id": 1,
-    "time": "<ul>\n<li>13:15</li>\n</ul>",
-    "movieImg": "mZqUnp2Yl6OoqZyW-220x315.jpg",
-    "movieGenres": "類型\t\n冒險、劇情",
-    "director": "導演\t\n彼得傑克森(Peter Jackson)",
-    "stars": "主要演員\t\n維果·莫天森(Viggo Mortensen) 、伊恩·麥克連(Ian Mckellen) 、伊利亞·伍德(Elijah Wood)",
-    "date": "上映日期：2021-04-29",
-    "movieTitle": "魔戒二部曲：雙城奇謀",
-    "subMovieTitle": "The Lord of the Rings: The Two Towers",
-    "description": [
-      "上映滿20周年，「魔戒三部曲」將於4月29日（週四）在台灣重新上映。",
-      "延續第一集劇情，哈比人佛羅多將繼續完成摧毀魔戒的任務，黑暗魔君的勢力也從中土世界延伸到岡鐸王國，一場魔戒聖戰即將展開……善惡兩元的對決。"
-    ],
-    "trailer": "https://www.youtube.com/embed/GUmSiIf9qIA"
-  },
-  {
     "id": 2,
     "time": "<ul>\n<li>09:40</li>\n<li>22:40</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
     "movieImg": "mZiUnaCYl6OorqGW-220x315.jpg",
-    "movieGenres": "類型\t\n劇情",
-    "director": "導演\t\n彼得傑克森(Peter Jackson)",
-    "stars": "主要演員\t\n西恩賓(Sean Bean) 、凱特布蘭琪(Cate Blanchett) 、伯納希爾(Bernard Hill) 、卡爾·艾本(Karl Urban) 、雨果威明 (Hugo Weaving) 、米蘭達·奧圖(Miranda Otto) 、奧蘭多·布魯(Orlando Bloom) 、安迪席克斯(Andy Serkis) 、麗芙泰勒(Liv Tyler) 、馬頓裘柯西(Marton Csokas) 、維果·莫天森(Viggo Mortensen) 、克里斯多夫李(Christopher Lee) 、伊恩·麥克連(Ian Mckellen) 、伊利亞·伍德(Elijah Wood) 、多明尼克莫納罕(Dominic Monaghan) 、伊安荷姆(Ian Holm) 、西恩艾斯汀(Sean Astin) 、比利包依德(Billy Boyd) 、布萊德杜瑞夫(Brad Dourif) 、納撒尼爾·利斯(Nathaniel Lees) 、約翰·雷伊(John Leigh) 、羅賓・馬科姆(Robyn Malcolm) 、約翰·諾伯(John Noble) 、克萊格·帕克(Craig Parker) 、約翰萊斯戴維斯(John Rhys-Davies ) 、布萊恩・瑟金特(Brian Sergent) 、布魯斯·斯彭斯(Bruce Spence) 、大衛·溫漢(David Wenham) 、亞歷桑德拉・奧斯汀(Ali Astin)",
-    "date": "上映日期：2021-04-29",
+    "movieGenres": "劇情",
+    "date": "2021-04-29",
+    "director": "彼得傑克森(Peter Jackson)",
+    "stars": "西恩賓(Sean Bean) 、凱特布蘭琪(Cate Blanchett) 、伯納希爾(Bernard Hill) 、卡爾·艾本(Karl Urban) 、雨果威明 (Hugo Weaving) 、米蘭達·奧圖(Miranda Otto) 、奧蘭多·布魯(Orlando Bloom) 、安迪席克斯(Andy Serkis) 、麗芙泰勒(Liv Tyler) 、馬頓裘柯西(Marton Csokas) 、維果·莫天森(Viggo Mortensen) 、克里斯多夫李(Christopher Lee) 、伊恩·麥克連(Ian Mckellen) 、伊利亞·伍德(Elijah Wood) 、多明尼克莫納罕(Dominic Monaghan) 、伊安荷姆(Ian Holm) 、西恩艾斯汀(Sean Astin) 、比利包依德(Billy Boyd) 、布萊德杜瑞夫(Brad Dourif) 、納撒尼爾·利斯(Nathaniel Lees) 、約翰·雷伊(John Leigh) 、羅賓・馬科姆(Robyn Malcolm) 、約翰·諾伯(John Noble) 、克萊格·帕克(Craig Parker) 、約翰萊斯戴維斯(John Rhys-Davies ) 、布萊恩・瑟金特(Brian Sergent) 、布魯斯·斯彭斯(Bruce Spence) 、大衛·溫漢(David Wenham) 、亞歷桑德拉・奧斯汀(Ali Astin)",
     "movieTitle": "魔戒首部曲：魔戒現身",
     "subMovieTitle": "The Lord of the Rings:The Fellowship of the Ring",
     "description": [
@@ -59,12 +61,30 @@
   },
   {
     "id": 3,
+    "time": "<ul>\n<li>13:15</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
+    "movieImg": "mZqUnp2Yl6OoqZyW-220x315.jpg",
+    "movieGenres": "冒險、劇情",
+    "date": "2021-04-29",
+    "director": "彼得傑克森(Peter Jackson)",
+    "stars": "維果·莫天森(Viggo Mortensen) 、伊恩·麥克連(Ian Mckellen) 、伊利亞·伍德(Elijah Wood)",
+    "movieTitle": "魔戒二部曲：雙城奇謀",
+    "subMovieTitle": "The Lord of the Rings: The Two Towers",
+    "description": [
+      "上映滿20周年，「魔戒三部曲」將於4月29日（週四）在台灣重新上映。",
+      "延續第一集劇情，哈比人佛羅多將繼續完成摧毀魔戒的任務，黑暗魔君的勢力也從中土世界延伸到岡鐸王國，一場魔戒聖戰即將展開……善惡兩元的對決。"
+    ],
+    "trailer": "https://www.youtube.com/embed/GUmSiIf9qIA"
+  },
+  {
+    "id": 4,
     "time": "<ul>\n<li>19:00</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
     "movieImg": "mZqUnqOYl6Shr5mW-220x315.jpg",
-    "movieGenres": "類型\t\n冒險、劇情",
-    "director": "導演\t\n彼得傑克森(Peter Jackson)",
-    "stars": "主要演員\t\n維果·莫天森(Viggo Mortensen) 、伊恩·麥克連(Ian Mckellen) 、伊利亞·伍德(Elijah Wood)",
-    "date": "上映日期：2021-04-29",
+    "movieGenres": "冒險、劇情",
+    "date": "2021-04-29",
+    "director": "彼得傑克森(Peter Jackson)",
+    "stars": "維果·莫天森(Viggo Mortensen) 、伊恩·麥克連(Ian Mckellen) 、伊利亞·伍德(Elijah Wood)",
     "movieTitle": "魔戒三部曲：王者再臨",
     "subMovieTitle": "The Lord of the Rings: The Return of the King",
     "description": [
@@ -73,13 +93,14 @@
     "trailer": "https://www.youtube.com/embed/ytjIH4yqQj8"
   },
   {
-    "id": 4,
-    "time": "<ul>\n<li>13:15</li>\n<li>21:25</li>\n</ul>",
+    "id": 5,
+    "time": "<ul>\n<li>09:55</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
     "movieImg": "mZqSn6SelJ_mr6GW-220x315.jpg",
-    "movieGenres": "類型\t\n科幻、冒險、懸疑、驚悚",
-    "director": "導演\t\n尼爾柏格(Neil Burger)",
-    "stars": "主要演員\t\n柯林法洛(Colin Farrell) 、泰·謝里丹(Tye Sheridan) 、莉莉蘿絲·戴普(Lily-Rose Depp)",
-    "date": "上映日期：2021-04-29",
+    "movieGenres": "科幻、冒險、懸疑、驚悚",
+    "date": "2021-04-29",
+    "director": "尼爾柏格(Neil Burger)",
+    "stars": "柯林法洛(Colin Farrell) 、泰·謝里丹(Tye Sheridan) 、莉莉蘿絲·戴普(Lily-Rose Depp)",
     "movieTitle": "一級任務",
     "subMovieTitle": "VOYAGERS",
     "description": [
@@ -92,13 +113,14 @@
     "trailer": "https://www.youtube.com/embed/DtzbQcR1CHo"
   },
   {
-    "id": 5,
-    "time": "<ul>\n<li>10:15</li>\n<li>12:30</li>\n<li>13:45</li>\n<li>14:45</li>\n<li>17:00</li>\n<li>19:15</li>\n<li>20:30</li>\n<li>21:30</li>\n<li>22:45</li>\n<li>23:45</li>\n</ul>",
+    "id": 6,
+    "time": "<ul>\n<li>09:20</li>\n<li>11:35</li>\n<li>14:00</li>\n<li>15:00</li>\n<li>16:15</li>\n<li>17:15</li>\n<li>18:30</li>\n<li>20:45</li>\n<li>21:45</li>\n<li>23:00</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
     "movieImg": "mZmZoaWel6afppqW-220x315.jpeg",
-    "movieGenres": "類型\t\n動作、劇情",
-    "director": "導演\t\n蓋·瑞奇(Guy Ritchie)",
-    "stars": "主要演員\t\n史考特伊斯威特(Scott Eastwood) 、傑森史塔森(Jason Statham) 、拉兹阿隆索(Laz Alonso) 、喬許哈奈特(Josh Hartnett) 、妮雅姆艾格 (Niamh Algar)",
-    "date": "上映日期：2021-04-29",
+    "movieGenres": "動作、劇情",
+    "date": "2021-04-29",
+    "director": "蓋·瑞奇(Guy Ritchie)",
+    "stars": "史考特伊斯威特(Scott Eastwood) 、傑森史塔森(Jason Statham) 、拉兹阿隆索(Laz Alonso) 、喬許哈奈特(Josh Hartnett) 、妮雅姆艾格 (Niamh Algar)",
     "movieTitle": "玩命鈔劫",
     "subMovieTitle": "Wrath of Man",
     "description": [
@@ -112,43 +134,14 @@
     "trailer": "https://www.youtube.com/embed/47_ZHeEOcM8"
   },
   {
-    "id": 6,
-    "time": "<ul>\n<li>11:30</li>\n</ul>",
-    "movieImg": "mZmWoKOYmKSirJ_W-220x315.JPG",
-    "movieGenres": "類型\t\n動作、劇情",
-    "director": "主要演員\t\n西島秀俊(Hidetoshi Nishijima) 、綾瀨遙(Haruka Ayase)",
-    "stars": "發行商\t\n龍祥電影",
-    "date": "上映日期：2021-04-23",
-    "movieTitle": "電影版 嬌妻出沒注意",
-    "subMovieTitle": "Gekijoban: Okusawa wa toriatsukai chui",
-    "description": [
-      "綾瀨遙、西島秀俊主演的同名日劇電影版，劇情接續日劇版完結篇後的半年，勇輝與菜美在「珠海市」重新展開生活，夫妻倆安逸的生活並未維持多久，被捲入了一場國家級的陰謀當中，這次他們被指派了除掉對方的終極任務。"
-    ],
-    "trailer": "https://www.youtube.com/embed/uAFYNIl2puc"
-  },
-  {
     "id": 7,
-    "time": "<ul>\n<li>16:55</li>\n</ul>",
-    "movieImg": "mZqRpqSek56fq6GW-220x315.jpg",
-    "movieGenres": "類型\t\n劇情",
-    "director": "導演\t\n夏卡·金(Shaka King)",
-    "stars": "主要演員\t\n傑西·普萊蒙(Jesse Plemons ) 、丹尼爾·卡盧亞(Daniel Kaluuya) 、凱斯史坦費爾德(Lakeith Stanfield)",
-    "date": "上映日期：2021-04-23",
-    "movieTitle": "猶大與黑色彌賽亞",
-    "subMovieTitle": "Judas and the Black Messiah",
-    "description": [
-      "1960年代晚期是美國歷史上最動亂又最關鍵的時代之一，充斥政治與社會騷亂的國家，情緒強烈的示威遊行如雨後春筍般冒出，抗議盛行並僵化的社會體制與性別認定常態、越戰，以及種族不公。全國各地的黑人族群，厭倦了在健保、住屋、教育和就業上都面對種族差異，且這些差異全都來自於制度上的不平等，他們終於受夠了。"
-    ],
-    "trailer": "https://www.youtube.com/embed/ysSQ3uu-BTM"
-  },
-  {
-    "id": 8,
-    "time": "<ul>\n<li>09:45</li>\n<li>15:20</li>\n<li>19:30</li>\n</ul>",
+    "time": "<ul>\n<li>13:05</li>\n<li>20:25</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
     "movieImg": "mZmSn5_YmKGnpqCW-220x315.jpg",
-    "movieGenres": "類型\t\n劇情",
-    "director": "導演\t\n費洛里安·齊勒(Florian Zeller)",
-    "stars": "主要演員\t\n奧莉薇雅柯爾曼(Olivia Colman) 、馬克·加蒂斯(Mark Gatiss) 、安東尼霍普金斯 (Anthony Hopkins)",
-    "date": "上映日期：2021-04-23",
+    "movieGenres": "劇情",
+    "date": "2021-04-23",
+    "director": "費洛里安·齊勒(Florian Zeller)",
+    "stars": "奧莉薇雅柯爾曼(Olivia Colman) 、馬克·加蒂斯(Mark Gatiss) 、安東尼霍普金斯 (Anthony Hopkins)",
     "movieTitle": "父親",
     "subMovieTitle": "The Father",
     "description": [
@@ -157,57 +150,14 @@
     "trailer": "https://www.youtube.com/embed/OFnoRaLAclg"
   },
   {
-    "id": 9,
-    "time": "<ul>\n<li>17:15</li>\n</ul>",
-    "movieImg": "mZiZoqWWlKSnqp6X-220x315.jpg",
-    "movieGenres": "類型\t\n動作、劇情",
-    "director": "導演\t\n尼古拉斯·傑雷基(Nicholas Jarecki)",
-    "stars": "主要演員\t\n蓋瑞歐德曼(Gary Oldman) 、路克伊凡斯(Luke Evans) 、 蜜雪兒羅莉葛茲(Michelle Rodriguez) 、艾米·漢默(Armie Hammer) 、伊凡潔琳·莉莉(Evangeline Lilly)",
-    "date": "上映日期：2021-04-21",
-    "movieTitle": "藥命交錯",
-    "subMovieTitle": "Crisis",
-    "description": [
-      "★奧斯卡影帝蓋瑞歐德曼精湛演出醫藥騙局吹哨者！",
-      "★「黃蜂女」伊凡潔琳莉莉、《紳士密令》艾米漢默聯手飆戲！",
-      "★《情慾華爾街》鬼才導演尼可拉斯傑瑞奇9年打造動作大片！",
-      "★真人真事震撼改編！",
-      "美國平均每天有近150人因成癮性止痛藥物過量死亡，藥物氾濫更造成每年785億美金的經濟負擔，成為新型態的",
-      "毒品危機！美國緝毒局警探傑克(艾米漢默飾)臥底在販毒組織中，因而接近了組織首腦「老木」，傑克企圖將一樁",
-      "芬太尼走私行動一網打盡，而剛戒掉毒癮的克萊兒(伊凡潔琳莉莉飾)發現她的兒子被捲入運毒行動而慘遭殺害，她",
-      "開始尋找兇手的蹤跡；與此同時，大學教授泰隆(蓋瑞歐德曼飾)在藥物研究中意外發現一家擁有雄厚勢力的製藥公",
-      "司即將推出的「非成癮性」新型止痛藥，一旦用藥時間拉長，成癮程度是一般止痛藥的三倍，一場牽扯十億美元利",
-      "益的「藥命危機」就此展開。"
-    ],
-    "trailer": "https://www.youtube.com/embed/36ACqc0OHGQ"
-  },
-  {
-    "id": 10,
-    "time": "<ul>\n<li>09:40</li>\n</ul>",
-    "movieImg": "mZmZnp_el56oq5_b-220x315.jpg",
-    "movieGenres": "類型\t\n動作",
-    "director": "導演\t\n喬治蓋洛(George Gallo)",
-    "stars": "主要演員\t\n摩根·費里曼(Morgan Freeman) 、露比蘿絲(Ruby Rose) 、艾卡特莉娜貝克 (Ekaterina Baker)",
-    "date": "上映日期：2021-04-21",
-    "movieTitle": "惡夜殺神",
-    "subMovieTitle": "Vanquish",
-    "description": [
-      "★《惡魔島》製片團隊最新火爆動作鉅獻",
-      "★《絕地戰警》系列編劇打造全新女英雄",
-      "★《捍衛任務》《惡靈古堡：最終章》露比蘿絲再展拳腳功夫",
-      "★PAGE國際電影劇本創作獎最佳劇本",
-      "★限時一晚、分秒必爭！為救出愛女，她在所不惜！",
-      "前運毒高手維多莉亞（露比蘿絲 飾）試圖擺脫黑暗的過去，但退休警察局長戴蒙（摩根費里曼 飾）卻綁架她的女兒，藉此要脅維多莉亞在一夜內替他收集完一批巨款。現在，維多莉亞必須靠著手中的槍和特殊技能深入虎穴，掃蕩阻擋在前的暴力幫派份子，才能再見到自己的女兒一面……。"
-    ],
-    "trailer": "https://www.youtube.com/embed/0yKP0_YzZ5M"
-  },
-  {
-    "id": 11,
-    "time": "<ul>\n<li>10:05</li>\n<li>14:30</li>\n<li>16:45</li>\n<li>19:05</li>\n<li>21:15</li>\n</ul>",
+    "id": 8,
+    "time": "<ul>\n<li>11:00</li>\n<li>14:20</li>\n<li>18:35</li>\n<li>20:40</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
     "movieImg": "mZmTn6SelZ_gr5mW-220x315.JPG",
-    "movieGenres": "類型\t\n懸疑、動作、動畫",
-    "director": "導演\t\n永岡智佳(Tomoka Nagaoka)",
-    "stars": "主要演員\t\n高山南(Takayama Minami) 、山口勝平(Yamaguchi Kappei) 、山崎和佳奈(Yamazaki Wakana) 、小山力也(Koyama Rikiya) 、林原惠(Hayashibara Megumi) 、池田秀一(Ikeda Shūichi)",
-    "date": "上映日期：2021-04-16",
+    "movieGenres": "懸疑、動作、動畫",
+    "date": "2021-04-16",
+    "director": "永岡智佳(Tomoka Nagaoka)",
+    "stars": "高山南(Takayama Minami) 、山口勝平(Yamaguchi Kappei) 、山崎和佳奈(Yamazaki Wakana) 、小山力也(Koyama Rikiya) 、林原惠(Hayashibara Megumi) 、池田秀一(Ikeda Shūichi)",
     "movieTitle": "名偵探柯南：緋色的彈丸",
     "subMovieTitle": "Detective Conan the Movie: The Scarlet Bullet",
     "description": [
@@ -216,13 +166,14 @@
     "trailer": "https://www.youtube.com/embed/1XWZQxH7MXM"
   },
   {
-    "id": 12,
-    "time": "<ul>\n<li>10:10</li>\n<li>14:10</li>\n<li>16:20</li>\n<li>18:30</li>\n<li>20:40</li>\n<li>23:30</li>\n</ul>",
+    "id": 9,
+    "time": "<ul>\n<li>09:30</li>\n<li>11:40</li>\n<li>13:50</li>\n<li>16:00</li>\n<li>18:10</li>\n<li>20:20</li>\n<li>22:30</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
     "movieImg": "mZmRpp_cmKOgrZmW-220x315.JPG",
-    "movieGenres": "類型\t\n溫馨、勵志",
-    "director": "導演\t\n楊智麟(Zhilin Yang)",
-    "stars": "主要演員\t\n陳嘉樺 、馬志翔(Chih-Hsiang Ma)",
-    "date": "上映日期：2021-04-16",
+    "movieGenres": "溫馨、勵志",
+    "date": "2021-04-16",
+    "director": "楊智麟(Zhilin Yang)",
+    "stars": "陳嘉樺 、馬志翔(Chih-Hsiang Ma)",
     "movieTitle": "聽見歌 再唱",
     "subMovieTitle": "Listen before you sing",
     "description": [
@@ -232,13 +183,14 @@
     "trailer": "https://www.youtube.com/embed/lHNekLZWEFs"
   },
   {
-    "id": 13,
-    "time": "<ul>\n<li>18:25</li>\n</ul>",
+    "id": 10,
+    "time": "<ul>\n<li>16:25</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
     "movieImg": "mZmSoqKek6anrJqW-220x315.jpg",
-    "movieGenres": "類型\t\n溫馨、勵志",
-    "director": "導演\t\n鄭李爍(Lee Isaac Chung)",
-    "stars": "主要演員\t\n尹汝貞(Yeo-jong Yun) 、史蒂芬元(Steven Yeun) 、韓藝璃(Yeri Han)",
-    "date": "上映日期：2021-04-16",
+    "movieGenres": "溫馨、勵志",
+    "date": "2021-04-16",
+    "director": "鄭李爍(Lee Isaac Chung)",
+    "stars": "尹汝貞(Yeo-jong Yun) 、史蒂芬元(Steven Yeun) 、韓藝璃(Yeri Han)",
     "movieTitle": "夢想之地",
     "subMovieTitle": "Minari",
     "description": [
@@ -248,13 +200,14 @@
     "trailer": "https://www.youtube.com/embed/8utDxmOYGoo"
   },
   {
-    "id": 14,
-    "time": "<ul>\n<li>12:15</li>\n<li>18:20</li>\n<li>23:25</li>\n</ul>",
+    "id": 11,
+    "time": "<ul>\n<li>13:55</li>\n<li>23:10</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
     "movieImg": "mJ_apaSclqKjq5mY-220x315.jpg",
-    "movieGenres": "類型\t\n動作、劇情",
-    "director": "導演\t\n李勇周",
-    "stars": "主要演員\t\n孔劉(Gong Yoo) 、趙宇鎮 、朴寶劍(Bo gum Park)",
-    "date": "上映日期：2021-04-12",
+    "movieGenres": "動作、劇情",
+    "date": "2021-04-12",
+    "director": "李勇周",
+    "stars": "孔劉(Gong Yoo) 、趙宇鎮 、朴寶劍(Bo gum Park)",
     "movieTitle": "永生戰",
     "subMovieTitle": "Seobok",
     "description": [
@@ -269,30 +222,14 @@
     "trailer": "https://www.youtube.com/embed/a1agMtUdYTk"
   },
   {
-    "id": 15,
-    "time": "<ul>\n<li>22:30</li>\n</ul>",
-    "movieImg": "mZiXn6SVlaWkr5qW-220x315.jpg",
-    "movieGenres": "類型\t\n冒險、動作",
-    "director": "導演\t\n賽門麥奎德(Simon McQuoid)",
-    "stars": "主要演員\t\n淺野忠信(Tadanobu Asano) 、黃經漢 (Chin Han) 、真田廣之(Hiroyuki Sanada) 、賈許．勞森(Josh Lawson) 、林路迪(Ludi Lin) 、喬塔斯利姆(Joe Taslim)",
-    "date": "上映日期：2021-04-08",
-    "movieTitle": "真人快打",
-    "subMovieTitle": "Mortal Kombat",
-    "description": [
-      "由溫子人擔任監製，為電玩改編電影。",
-      "描述綜合格鬥（MMA）選手「科爾楊」被指控收賄故意打輸，他並不知道自己的身世，也不知道為何「外世界（Outworld）」的帝王「尚宗」要派出旗下首席戰士來獵捕他，此戰士「絕對零度」是一名超脫的寒冰法師（Cryomancer）。",
-      "科爾擔心家人的安危，於是在「賈克斯」的指點下去找「刀鋒索尼婭」。賈克斯是特種部隊的少校，身上有著跟科爾胎記一樣的神龍記號。科爾很快就來到「雷電」的寺廟，雷電是一名古神，負責守衛「地域（Earthrealm）」，他會庇護身上有神龍記號的人。科爾在這裡跟老練戰士「劉康」、「空佬」和強悍傭兵「加納」一起訓練，他準備好跟地球最強的冠軍聯手，為了宇宙展開一場高風險戰役，並肩對抗外世界的敵人。可是，科爾會被激發潛力，解開他內心巨大力量的「奧祕（arcana）」，及時拯救他的家人，並從此阻止外世界？"
-    ],
-    "trailer": "https://www.youtube.com/embed/f7sQU1Ae3wg"
-  },
-  {
-    "id": 16,
-    "time": "<ul>\n<li>10:50</li>\n<li>12:00</li>\n<li>13:00</li>\n<li>15:10</li>\n<li>16:10</li>\n<li>17:20</li>\n<li>19:30</li>\n<li>21:40</li>\n<li>23:50</li>\n</ul>",
+    "id": 12,
+    "time": "<ul>\n<li>09:00</li>\n<li>11:10</li>\n<li>12:20</li>\n<li>13:20</li>\n<li>15:30</li>\n<li>16:40</li>\n<li>17:40</li>\n<li>19:50</li>\n<li>22:00</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
     "movieImg": "mZiXnp_WlqCmq6CW-220x315.jpg",
-    "movieGenres": "類型\t\n愛情、劇情",
-    "director": "導演\t\n殷振豪",
-    "stars": "主要演員\t\n許瑋甯 、邱澤(Qiu Ze)",
-    "date": "上映日期：2021-04-01",
+    "movieGenres": "愛情、劇情",
+    "date": "2021-04-01",
+    "director": "殷振豪",
+    "stars": "許瑋甯 、邱澤(Qiu Ze)",
     "movieTitle": "當男人戀愛時",
     "subMovieTitle": "Man In Love",
     "description": [
@@ -303,13 +240,14 @@
     "trailer": "https://www.youtube.com/embed/uVwLTVO88pk"
   },
   {
-    "id": 17,
+    "id": 13,
     "time": "<ul>\n<li>16:50</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
     "movieImg": "mZiXoKOVlp6ipp_W-220x315.jpg",
-    "movieGenres": "類型\t\n科幻、懸疑、動作、驚悚",
-    "director": "導演\t\n亞當溫高德(Adam Wingard)",
-    "stars": "主要演員\t\n凱爾錢德勒(Kyle Chandler) 、小栗旬(Shun Oguri) 、蕾貝卡·霍爾(Rebecca Hall) 、亞歷山大·斯卡斯加德(Alexander Skarsgard) 、藍斯·瑞迪克(Lance Reddick) 、德米安畢齊(Demian Bichir) 、朱利安·丹尼森(Julian Dennison) 、艾莎岡薩雷(Eiza Gonzalez) 、米莉芭比布朗(Millie Bobby Brown) 、布萊恩泰瑞亨利(Brian Tyree Henry) 、錢信伊(Ronny Chieng) 、凱莉·霍特爾(Kaylee Hottle) 、海金・凱－卡辛(Hakeem Kae-Kazim) 、約翰·皮魯切洛(John Pirruccello) 、克里斯・查克(Chris Chalk)",
-    "date": "上映日期：2021-03-24",
+    "movieGenres": "科幻、懸疑、動作、驚悚",
+    "date": "2021-03-24",
+    "director": "亞當溫高德(Adam Wingard)",
+    "stars": "凱爾錢德勒(Kyle Chandler) 、小栗旬(Shun Oguri) 、蕾貝卡·霍爾(Rebecca Hall) 、亞歷山大·斯卡斯加德(Alexander Skarsgard) 、藍斯·瑞迪克(Lance Reddick) 、德米安畢齊(Demian Bichir) 、朱利安·丹尼森(Julian Dennison) 、艾莎岡薩雷(Eiza Gonzalez) 、米莉芭比布朗(Millie Bobby Brown) 、布萊恩泰瑞亨利(Brian Tyree Henry) 、錢信伊(Ronny Chieng) 、凱莉·霍特爾(Kaylee Hottle) 、海金・凱－卡辛(Hakeem Kae-Kazim) 、約翰·皮魯切洛(John Pirruccello) 、克里斯・查克(Chris Chalk)",
     "movieTitle": "哥吉拉大戰金剛",
     "subMovieTitle": "Godzilla vs. Kong",
     "description": [
@@ -320,13 +258,14 @@
     "trailer": "https://www.youtube.com/embed/idmk-aBY-64"
   },
   {
-    "id": 18,
-    "time": "<ul>\n<li>21:35</li>\n</ul>",
+    "id": 14,
+    "time": "<ul>\n<li>19:35</li>\n</ul>",
+    "ScrapTime": "05/06/2021",
     "movieImg": "mZiTpKCclqWfrqGX-220x315.jpg",
-    "movieGenres": "類型\t\n劇情",
-    "director": "導演\t\n趙婷(Chloe Zhao)",
-    "stars": "主要演員\t\n法蘭西絲·麥多曼(Frances Mcdormand) 、大衛史崔森(David Strathairn) 、蓋伊·德福雷斯特(Gay DeForest)",
-    "date": "上映日期：2021-03-19",
+    "movieGenres": "劇情",
+    "date": "2021-03-19",
+    "director": "趙婷(Chloe Zhao)",
+    "stars": "法蘭西絲·麥多曼(Frances Mcdormand) 、大衛史崔森(David Strathairn) 、蓋伊·德福雷斯特(Gay DeForest)",
     "movieTitle": "游牧人生",
     "subMovieTitle": "Nomadland",
     "description": [

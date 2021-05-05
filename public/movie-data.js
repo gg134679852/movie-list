@@ -19,7 +19,7 @@ async function movieScraper() {
     })
     console.log("載入網頁中...")
     const browser = await puppeteer.launch({
-      headless: false,
+      // headless: false,
     })
     const page = await browser.newPage()
 
@@ -27,7 +27,8 @@ async function movieScraper() {
       waitUntil: 'networkidle0'
     })
     // await page.waitForTimeout(3000)
-    const movieTime =  await page.$$eval('.bottom > ul ', e => e.map(e => e.outerHTML))
+    console.log('正在抓取電影時刻表...')
+    const movieTime =  await page.$$eval('.bottom > ul', e => e.map(e => e.outerHTML))
     await page.$$eval('.timeTable2', e => e.map(e => e.querySelector('a').href))
       .then(async (m) => {
         for (i = 0; i < m.length; i++) {
@@ -36,11 +37,13 @@ async function movieScraper() {
           let imgUrl = ''
           await page.goto(`${url}`)
         
-          // console.log(`抓取第${i}個檔案`)
+          console.log(`正在抓取第${i}部電影詳細資料...`)
           
           movieData.id = i
           
           movieData.time = movieTime[i]
+          
+          movieData.ScrapTime = momentDay
 
           imgUrl = await page.$eval('.poster', e => e.querySelector('img[title]').src)
           
@@ -48,13 +51,13 @@ async function movieScraper() {
 
           movieData.movieImg = imgUrl.split('/')[6]
            
-          movieData.movieGenres = await page.$eval('.filmCast', e => e.querySelectorAll('p')[0].innerText)
+          movieData.movieGenres = await page.$eval('.filmCast', e => e.querySelectorAll('p')[0].innerText.split('\t\n')[1])
+          
+          movieData.date = await page.$eval('.filmCast', e => e.querySelectorAll('p')[1].innerText.split('\t\n')[1])
 
-          movieData.director = await page.$eval('.filmCast', e => e.querySelectorAll('p')[2].innerText)
+          movieData.director = await page.$eval('.filmCast', e => e.querySelectorAll('p')[2].innerText.split('\t\n')[1])
 
-          movieData.stars = await page.$eval('.filmCast', e => e.querySelectorAll('p')[3].innerText)
-
-          movieData.date = await page.$eval('.right', e => e.querySelector('.keys').querySelector('.date').innerText)
+          movieData.stars = await page.$eval('.filmCast', e => e.querySelectorAll('p')[3].innerText.split('\t\n')[1])
           
           movieData.movieTitle = await page.$eval('.right', e => e.querySelector('h2').innerText)
 
@@ -78,13 +81,17 @@ async function movieScraper() {
       })
       .then(async () => {
         await browser.close()
+        console.log("寫入json...")
           jsonfile.writeFile(movieJson, movieDatas, { spaces: 2 }, (err) => {
             if (err) console.error(err)
           })
+          console.log("完成~~")
       })
   } catch (err) {
     console.log(err)
   }
 }
 
-movieScraper()
+module.exports= {
+  movieScraper
+}

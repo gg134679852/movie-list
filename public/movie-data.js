@@ -19,7 +19,7 @@ async function movieScraper() {
     })
     console.log("載入網頁中...")
     const browser = await puppeteer.launch({
-      // headless: false,
+      headless: false,
     })
     const page = await browser.newPage()
 

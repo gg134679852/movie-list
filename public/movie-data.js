@@ -22,7 +22,9 @@ async function movieScraper() {
       // headless: false,
       'args': [
         '--no-sandbox',
-        '--disable-setuid-sandbox'
+        '--disable-setuid-sandbox',
+        '--disable-dev-shm-usage',
+        '--single-process'
       ]
     })
     const page = await browser.newPage()

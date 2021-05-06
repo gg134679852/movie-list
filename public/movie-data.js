@@ -1,7 +1,5 @@
 const puppeteer = require('puppeteer')
 const download = require('download')
-const movieJson ='./public/json/movies.json'
-const fs = require('fs')
 const movieDatas = []
 const moment = require('moment')
 const momentDay = moment().format('L')

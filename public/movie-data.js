@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer')
-const jsonfile = require('jsonfile')
 const download = require('download')
 const movieJson ='./public/json/movies.json'
 const fs = require('fs')
@@ -87,10 +86,6 @@ async function movieScraper() {
       })
       .then(async () => {
         await browser.close()
-        console.log("寫入json...")
-          jsonfile.writeFile(movieJson, movieDatas, { spaces: 2 }, (err) => {
-            if (err) console.error(err)
-          })
           console.log("完成~~")
       })
   } catch (err) {
@@ -99,5 +94,6 @@ async function movieScraper() {
 }
 
 module.exports= {
-  movieScraper
+  movieScraper,
+  movieDatas
 }

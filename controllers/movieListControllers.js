@@ -1,12 +1,11 @@
-const movieJson = require('../public/json/movies.json')
-const { movieScraper} = require('../public/movie-data.js')
+const { movieScraper, movieDatas} = require('../public/movie-data.js')
 const movieListControllers = {
   getMovie: (req, res) => {
-    res.render('movieList', {movieJson})
+    res.render('movieList', { movieDatas})
   },
   movieDetailed: (req, res)=>{
     const index = req.params.id
-    const renderData = movieJson[index]
+    const renderData = movieDatas[index]
     res.render('show', { renderData })
   },
   movieScraper: (req, res) => {

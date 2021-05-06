@@ -10,16 +10,16 @@ const splitMomentDay = momentDay.split('/')
 
 async function movieScraper() {
   try {
-    fs.rm('img', { recursive: true },function (err) {
-      if (err) {
-        console.log(err)
-      } else {
-        fs.mkdirSync('img')
-      }
-    })
+    // fs.rm('img', { recursive: true },function (err) {
+    //   if (err) {
+    //     console.log(err)
+    //   } else {
+    //     fs.mkdirSync('img')
+    //   }
+    // })
     console.log("載入網頁中...")
     const browser = await puppeteer.launch({
-      headless: false,
+      // headless: false,
       'args': [
         '--no-sandbox',
         '--disable-setuid-sandbox'

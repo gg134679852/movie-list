@@ -17,7 +17,7 @@ app.engine(
 );
 app.set('view engine', 'handlebars');
 app.use(express.static('public'))
-app.use('/img', express.static(__dirname + '/Img'))
+app.use('/img', express.static(__dirname + '/img'))
 app.use(urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
 app.listen(PORT, () => {

@@ -3,9 +3,15 @@ const { urlencoded } = require('body-parser');
 const methodOverride = require('method-override');
 const handlebars = require('express-handlebars')
 const Promise = require('bluebird')
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+require('./config/mongoose')
+
 const app = express()
-const PORT = process.env.PORT || 3000
-global.Promise = Promise
+const PORT = process.env.PORT
+
 app.engine(
   'handlebars',
   handlebars({
@@ -13,6 +19,7 @@ app.engine(
     // helpers: require('./config/handlebars-helpers'),
   })
 );
+global.Promise = Promise
 app.set('view engine', 'handlebars');
 app.use(express.static('public'))
 app.use('/img', express.static(__dirname + '/img'))

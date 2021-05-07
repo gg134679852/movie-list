@@ -7,7 +7,6 @@ const Promise = require('bluebird')
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
-require('./config/mongoose')
 
 const app = express()
 const PORT = process.env.PORT
@@ -22,7 +21,7 @@ app.engine(
 global.Promise = Promise
 app.set('view engine', 'handlebars');
 app.use(express.static('public'))
-app.use('/img', express.static(__dirname + '/img'))
+// app.use('/img', express.static(__dirname + '/img'))
 app.use(urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
 app.listen(PORT, () => {

@@ -1,4 +1,4 @@
-const { movieScraper, movieDatas} = require('../public/movie-data.js')
+const { movieScraper, movieDatas} = require('../public/movie-data')
 const movieListControllers = {
   getMovie: (req, res) => {
     res.render('movieList', { movieDatas})

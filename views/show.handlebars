@@ -5,8 +5,8 @@
     <p class="text-secondary mb-1">
       {{renderData.date}}
     </p>
-    <img class="img-fluid" src="/img/{{renderData.movieImg}}" alt="Card image cap"
-      style="height:auto;">
+    <img class="img-fluid" src="data:image/png;base64,{{renderData.movieImg}}" alt="Card image cap"
+     with="500" heigh="750">
   </div>
   <div class="row">
     <div class="col-12 col-md-10 col-lg-8 mx-auto">
@@ -33,7 +33,7 @@
           {{{renderData.time}}}
       </div>
       <p>
-        {{renderData.description}}
+        {{{renderData.description}}}
       </p>
       <div class="text-center">
       <iframe width="560" height="315" src="{{renderData.trailer}}" title="YouTube video player"

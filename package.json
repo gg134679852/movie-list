@@ -23,11 +23,7 @@
     "express-session": "^1.17.1",
     "method-override": "^3.0.0",
     "moment": "^2.29.1",
-    "mysql2": "^2.2.5",
-    "pg": "^8.6.0",
-    "puppeteer": "^9.0.0",
-    "sequelize": "^6.6.2",
-    "sequelize-cli": "^6.2.0"
+    "puppeteer": "^9.0.0"
   },
   "devDependencies": {},
   "description": ""

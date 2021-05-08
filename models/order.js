@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Oder extends Model {
+  class Order extends Model {
     static associate(models) {
       Order.belongsToMany(models.Product, {
         as: 'items',
@@ -12,11 +12,10 @@ module.exports = (sequelize, DataTypes) => {
         },
         foreignKey: 'OrderId'
       });
-      Order.belongsTo(models.User)
       Order.hasMany(models.Payment)
     }
   };
-  Oder.init({
+  Order.init({
     sn: DataTypes.INTEGER,
     name: DataTypes.STRING,
     phone: DataTypes.STRING,
@@ -26,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     payment_status: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Oder',
+    modelName: 'Order',
   });
-  return Oder;
+  return Order;
 };

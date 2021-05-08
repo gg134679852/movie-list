@@ -1,3 +1,5 @@
+const db = require('../models')
+const Product = db.Product
 const base64 = require('node-base64-image')
 const puppeteer = require('puppeteer')
 const movieDatas = []
@@ -67,6 +69,11 @@ async function movieScraper() {
 
           data.trailer = await page.$eval('iframe', m => { return m.src })
          
+          await Product.create({
+            name: data.movieTitle,
+            price: 250
+          })
+
           if (movieDatas.length !== 0){
             movieDatas.splice(i, 1, data)
           }else{

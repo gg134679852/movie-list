@@ -7,6 +7,7 @@
 - download 8.0.0
 - express 4.17.1
 - express-handlebars 5.2.0
+- "node-base64-image": "^2.0.3"
 
 ## 安裝與執行 (installation and execution)
 1. 選定一個資料夾，用來存放本專案。開啟終端機，移動至該資料夾，下載本專案

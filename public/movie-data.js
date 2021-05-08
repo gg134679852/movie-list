@@ -71,7 +71,8 @@ async function movieScraper() {
          
           await Product.create({
             name: data.movieTitle,
-            price: 250
+            price: 250,
+            date: data.date
           })
 
           if (movieDatas.length !== 0){

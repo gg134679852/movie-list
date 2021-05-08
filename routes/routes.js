@@ -9,6 +9,8 @@ router.get('/movieList', movieListControllers.getMovie)
 
 router.get('/movieList/:id/detailed', movieListControllers.movieDetailed)
 
+router.get('/movieList/cart',)
+
 router.get('/movieList/movieScraper', movieListControllers.movieScraper)
 
 module.exports = router

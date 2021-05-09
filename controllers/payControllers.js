@@ -14,7 +14,6 @@ const payControllers = {
     return Cart.findByPk(req.session.cartId, { include: [{ model: Product, as: 'items' }] }).then(cart => {
       cart = cart || { items: [] }
       let totalPrice = cart.items.length > 0 ? cart.items.map(d => d.price * d.CartItem.quantity).reduce((a, b) => a + b) : 0
-      console.log(cart.toJSON())
       return res.render('cart', {
         cart: cart.toJSON(),
         totalPrice
@@ -43,9 +42,36 @@ const payControllers = {
       res.redirect('back')
     } catch (error) {
       console.log(error)
-      // callback({ status: 'error', message: 'error !' })
     }
   },
+  addCartItem: (req, res) => {
+    CartItem.findByPk(req.params.id).then(cartItem => {
+      cartItem.update({
+        quantity: cartItem.quantity + 1,
+      })
+        .then((cartItem) => {
+          return res.redirect('back')
+        })
+    })
+  },
+  subCartItem: (req, res) => {
+    CartItem.findByPk(req.params.id).then(cartItem => {
+      cartItem.update({
+        quantity: cartItem.quantity - 1 >= 1 ? cartItem.quantity - 1 : 1,
+      })
+        .then((cartItem) => {
+          return res.redirect('back')
+        })
+    })
+  },
+  deleteCartItem: (req, res) => {
+    CartItem.findByPk(req.params.id).then(cartItem => {
+      cartItem.destroy()
+        .then((cartItem) => {
+          return res.redirect('back')
+        })
+    })
+  }
 }
 
 module.exports = payControllers

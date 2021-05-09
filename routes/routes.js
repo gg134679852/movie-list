@@ -14,6 +14,12 @@ router.get('/movieList/cart', payControllers.getCart)
 
 router.post('/movieList/cart', payControllers.postCart)
 
+router.post('/cartItem/:id/add', payControllers.addCartItem)
+
+router.post('/cartItem/:id/sub', payControllers.subCartItem)
+
+router.delete('/cartItem/:id', payControllers.deleteCartItem)
+
 router.get('/movieList/movieScraper', movieListControllers.movieScraper)
 
 module.exports = router

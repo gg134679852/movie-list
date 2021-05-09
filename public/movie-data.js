@@ -76,12 +76,7 @@ async function movieScraper() {
             price: 250,
             date: data.date
           })
-
-          if (movieDatas.length !== 0){
-            movieDatas.splice(i, 1, data)
-          }else{
             movieDatas.push(data)
-          }
         }
       })
       .then(async () => {

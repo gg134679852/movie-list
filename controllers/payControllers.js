@@ -7,46 +7,44 @@ const OderItem = db.OderItem
 const Payment = db.Payment
 
 const payControllers = {
-  getCart:(req,res)=>{
+  renderCart:(req,res)=>{
     res.render('cart')
   },
   getCart: (req, res) => {
-    return Cart.findByPk(req.session.cartId, { include: 'items' }).then(cart => {
+    return Cart.findByPk(req.session.cartId, { include: [{ model: Product, as: 'items' }] }).then(cart => {
       cart = cart || { items: [] }
       let totalPrice = cart.items.length > 0 ? cart.items.map(d => d.price * d.CartItem.quantity).reduce((a, b) => a + b) : 0
+      console.log(cart.toJSON())
       return res.render('cart', {
-        cart,
+        cart: cart.toJSON(),
         totalPrice
       })
     })
   },
-  postCart: (req, res) => {
-    return Cart.findOrCreate({
-      where: {
-        id: req.session.cartId || 0,
-      },
-    }).spread(function (cart, created) {
-      return CartItem.findOrCreate({
+  postCart: async (req, res, callback) => {
+    try {
+      const cart = await Cart.findOrCreate({ where: { id: req.session.cartId || 0 } })
+      const { id: CartId } = cart[0].dataValues
+      let cartItem = await CartItem.findOrCreate({
         where: {
-          CartId: cart.id,
+          CartId,
           ProductId: req.body.productId
         },
         default: {
-          CartId: cart.id,
+          CartId,
           ProductId: req.body.productId,
         }
-      }).spread(function (cartItem, created) {
-        return cartItem.update({
-          quantity: (cartItem.quantity || 0) + 1,
-        })
-          .then((cartItem) => {
-            req.session.cartId = cart.id
-            return req.session.save(() => {
-              return res.redirect('back')
-            })
-          })
       })
-    });
+      await cartItem[0].update({
+        quantity: (cartItem[0].dataValues.quantity || 0) + 1
+      })
+      req.session.cartId = CartId
+      req.session.save()
+      res.redirect('back')
+    } catch (error) {
+      console.log(error)
+      // callback({ status: 'error', message: 'error !' })
+    }
   },
 }
 

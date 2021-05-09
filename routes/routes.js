@@ -12,6 +12,8 @@ router.get('/movieList/:id/detailed', movieListControllers.movieDetailed)
 
 router.get('/movieList/cart', payControllers.getCart)
 
+router.post('/movieList/cart', payControllers.postCart)
+
 router.get('/movieList/movieScraper', movieListControllers.movieScraper)
 
 module.exports = router

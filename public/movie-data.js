@@ -1,5 +1,6 @@
 const db = require('../models')
 const Product = db.Product
+const Poster = db.Poster
 const base64 = require('node-base64-image')
 const puppeteer = require('puppeteer')
 const movieDatas = []
@@ -9,6 +10,7 @@ const splitMomentDay = momentDay.split('/')
 
 async function movieScraper() {
   try {
+    Product.destroy({ where: {} })
     console.log("載入網頁中...")
     const browser = await puppeteer.launch({
       // headless: false,
@@ -42,15 +44,14 @@ async function movieScraper() {
 
           console.log(`正在抓取第${i}部電影詳細資料...`)
 
-          data.id = i
+          data.id = i + 1
 
           data.time = movieTime[i]
 
           imgUrl = await page.$eval('.poster', e => e.querySelector('img[title]').src)
 
-          data.movieImg = await base64.encode(imgUrl, options);
+          data.movieImg = await base64.encode(imgUrl, options)
 
-          
           data.movieGenres = await page.$eval('.filmCast', e => e.querySelectorAll('p')[0].innerText.split('\t\n')[1])
 
           data.date = await page.$eval('.filmCast', e => e.querySelectorAll('p')[1].innerText.split('\t\n')[1])
@@ -70,6 +71,7 @@ async function movieScraper() {
           data.trailer = await page.$eval('iframe', m => { return m.src })
          
           await Product.create({
+            id:data.id,
             name: data.movieTitle,
             price: 250,
             date: data.date

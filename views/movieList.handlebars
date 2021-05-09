@@ -30,6 +30,12 @@
               <a href="/movieList/{{this.id}}/detailed">
                 <button class="btn btn-primary btn-show-movie">More</button>
               </a>
+              <div class="btn-group">
+                <form action="/movieList/cart" method="POST">
+                  <input type="hidden" name="productId" value="{{this.id}}">
+                  <button type="submit" class="btn btn-sm btn-outline-secondary">Add to Cart</button>
+                </form>
+              </div>
               {{!-- <button class="btn btn-info btn-add-favorite" data-id="1">+</button> --}}
             </div>
           </div>

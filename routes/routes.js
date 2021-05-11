@@ -20,6 +20,10 @@ router.post('/cartItem/:id/sub', payControllers.subCartItem)
 
 router.delete('/cartItem/:id', payControllers.deleteCartItem)
 
+router.get('/orders', payControllers.getOrders)
+
+router.post('/cart/orders', payControllers.postOrder)
+
 router.get('/movieList/movieScraper', movieListControllers.movieScraper)
 
 module.exports = router

@@ -22,7 +22,13 @@ router.delete('/cartItem/:id', payControllers.deleteCartItem)
 
 router.get('/orders', payControllers.getOrders)
 
-router.post('/cart/orders', payControllers.postOrder)
+router.post('/orders', payControllers.postOrder)
+
+router.delete('/orders/:id', payControllers.cancelOrder)
+
+router.get('/orders/:id/payment', payControllers.getPayment)
+
+router.post('/spgateway/callback', payControllers.spgatewayCallback)
 
 router.get('/movieList/movieScraper', movieListControllers.movieScraper)
 

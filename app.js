@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 const app = express()
 const PORT = process.env.PORT
-
+global.Promise = Promise
 app.engine(
   'handlebars',
   handlebars({
@@ -20,7 +20,6 @@ app.engine(
     // helpers: require('./config/handlebars-helpers'),
   })
 );
-global.Promise = Promise
 app.set('view engine', 'handlebars');
 app.use(express.static('public'))
 // app.use('/img', express.static(__dirname + '/img'))

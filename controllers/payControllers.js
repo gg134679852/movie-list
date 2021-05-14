@@ -5,6 +5,7 @@ const CartItem = db.CartItem
 const Order = db.Order
 const OrderItem = db.OrderItem
 const Payment = db.Payment
+const {getTradeInfo} = require('../public/javascript/tradeinfo')
 
 const payControllers = {
   renderCart:(req,res)=>{
@@ -88,6 +89,7 @@ const payControllers = {
         name: req.body.name,
         address: req.body.address,
         phone: req.body.phone,
+        email: req.body.email,
         shipping_status: req.body.shipping_status,
         payment_status: req.body.payment_status,
         amount: req.body.amount,
@@ -120,6 +122,47 @@ const payControllers = {
         return res.redirect('back')
       })
     })
+  },
+  getPayment: (req, res) => {
+    console.log('===== getPayment =====')
+    console.log(req.params.id)
+    console.log('==========')
+
+    return Order.findByPk(req.params.id, {}).then(order => {
+      const tradeInfo = getTradeInfo(order.amount, '電影票', 'v123582@gmail.com')
+      order.update({
+        ...req.body,
+        sn: tradeInfo.MerchantOrderNo,
+      }).then(order => {
+        res.render('payment', { order, tradeInfo })
+      })
+    })
+  },
+  spgatewayCallback: (req, res) => {
+    console.log('===== spgatewayCallback =====')
+    console.log(req.method)
+    console.log(req.query)
+    console.log(req.body)
+    console.log('==========')
+
+    console.log('===== spgatewayCallback: TradeInfo =====')
+    console.log(req.body.TradeInfo)
+
+
+    const data = JSON.parse(create_mpg_aes_decrypt(req.body.TradeInfo))
+
+    console.log('===== spgatewayCallback: create_mpg_aes_decrypt、data =====')
+    console.log(data)
+
+    return Order.findAll({ where: { sn: data['Result']['MerchantOrderNo'] } }).then(orders => {
+      orders[0].update({
+        ...req.body,
+        payment_status: 1,
+      }).then(order => {
+        return res.redirect('/orders')
+      })
+    })
+
   }
 }
 

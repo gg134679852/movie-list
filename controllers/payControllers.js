@@ -5,7 +5,7 @@ const CartItem = db.CartItem
 const Order = db.Order
 const OrderItem = db.OrderItem
 const Payment = db.Payment
-const {getTradeInfo} = require('../public/javascript/tradeinfo')
+const { getTradeInfo, create_mpg_aes_decrypt} = require('../public/javascript/tradeinfo')
 
 const payControllers = {
   renderCart:(req,res)=>{
@@ -129,7 +129,7 @@ const payControllers = {
     console.log('==========')
 
     return Order.findByPk(req.params.id, {}).then(order => {
-      const tradeInfo = getTradeInfo(order.amount, '電影票', 'v123582@gmail.com')
+      const tradeInfo = getTradeInfo(order.amount, '電影票', order.email)
       order.update({
         ...req.body,
         sn: tradeInfo.MerchantOrderNo,

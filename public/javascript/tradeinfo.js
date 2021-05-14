@@ -89,5 +89,6 @@ function getTradeInfo(Amt, Desc, email) {
 }
 
 module.exports = {
-  getTradeInfo
+  getTradeInfo,
+  create_mpg_aes_decrypt
 }

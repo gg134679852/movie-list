@@ -1,4 +1,4 @@
-
+<div class="container-lg mt-3">
 {{#each orders}}
 <div class="row">
   <div class="col-md-5">
@@ -30,8 +30,7 @@
       </tbody>
     </table>
   </div>
-
-  <div>
+  <div class="ml-5">
     <ul>
       <li>{{this.dataValues.id}}</li>
       <li>name: {{this.dataValues.name}}</li>
@@ -40,21 +39,14 @@
       <li>shipping_status: {{this.dataValues.shipping_status}}</li>
       <li>payment_status: {{this.dataValues.payment_status}}</li>
     </ul>
-
     <div style="display: flex; justify-content: space-around;">
       <form action="/orders/{{this.dataValues.id}}?_method=DELETE" method="POST">
         <button type="submit" class="btn btn-primary">取消訂單</button>
       </form>
-
       <a href="/orders/{{this.dataValues.id}}/payment"><button class="btn btn-primary">立即付款</button></a>
     </div>
   </div>
-
-
-
-
-
 </div>
-
 <hr />
 {{/each}}
+</div>

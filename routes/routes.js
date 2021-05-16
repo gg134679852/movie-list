@@ -4,8 +4,9 @@ const movieListControllers = require('../controllers/movieListControllers')
 const payControllers = require('../controllers/payControllers')
 
 router.get('/',(req, res) => {
-  res.redirect('/movieList');
-});
+  res.redirect('/movieList')
+})
+
 router.get('/movieList', movieListControllers.getMovie)
 
 router.get('/movieList/:id/detailed', movieListControllers.movieDetailed)
@@ -29,7 +30,5 @@ router.delete('/orders/:id', payControllers.cancelOrder)
 router.get('/orders/:id/payment', payControllers.getPayment)
 
 router.post('/spgateway/callback', payControllers.spgatewayCallback)
-
-router.get('/movieList/movieScraper', movieListControllers.movieScraper)
 
 module.exports = router

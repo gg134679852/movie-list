@@ -1,3 +1,8 @@
+
+{{#if movieDatas}}
+{{else}}
+<meta http-equiv="refresh" content="30">
+{{/if}}
 <!-- ./views/index.handlebars -->
 <div class="container-lg mt-5">
   <!-- search bar -->
@@ -16,7 +21,8 @@
   </div> --}}
   <!-- movie list -->
   <div class="d-flex">
-  <div class="row" id="data-panel"> 
+  <div class="row" id="data-panel">
+    {{#if movieDatas}}
       {{#each movieDatas}}
       <div class="col-sm-3">
         <div class="mb-2">
@@ -44,6 +50,15 @@
         </div>
       </div>
       {{/each}}
+      {{else}}
+      <div class="text-center">
+      <h1>正在讀取資料 請稍後</h1>
+      <div class="loader">
+        <img src="http://static.demilked.com/wp-content/uploads/2016/06/gif-animations-replace-loading-screen-14.gif"
+          alt="Loading..." />
+          </div>
+      </div>
+      {{/if}}
       </div>
       {{#if totalPrice}}
         <nav class="col-md-3 d-none d-md-block sidebar ml-3 ">

@@ -1,9 +1,10 @@
 const db = require('../models')
 const Product = db.Product
-const Poster = db.Poster
+const ScrapedDate = db.ScrapedDate
 const base64 = require('node-base64-image')
 const puppeteer = require('puppeteer')
 const movieDatas = []
+const totalLength = []
 const moment = require('moment')
 const momentDay = moment().format('L')
 const splitMomentDay = momentDay.split('/')
@@ -11,6 +12,7 @@ const splitMomentDay = momentDay.split('/')
 async function movieScraper() {
   try {
     Product.destroy({ where: {} })
+    ScrapedDate.destroy({ where: {} })
     console.log("載入網頁中...")
     const browser = await puppeteer.launch({
       // headless: false,
@@ -23,13 +25,14 @@ async function movieScraper() {
     })
     const page = await browser.newPage()
 
-    await page.goto(`https://movie.gamme.com.tw/mtime/%E6%96%B0%E5%8C%97/0/43/${splitMomentDay[0]}${splitMomentDay[1]}`, {
+    await page.goto(`https://movie.gamme.com.tw/mtime/%E6%96%B0%E5%8C%97/0/43/0515`, {
       waitUntil: 'networkidle0'
     })
     console.log('正在抓取電影時刻表...')
     const movieTime = await page.$$eval('.bottom > ul', e => e.map(e => e.outerHTML))
     await page.$$eval('.timeTable2', e => e.map(e => e.querySelector('a').href))
       .then(async (m) => {
+        totalLength.push(m.length)
         for (i = 0; i < m.length; i++) {
           const url = m[i]
           let data = {}
@@ -43,7 +46,7 @@ async function movieScraper() {
           await page.goto(`${url}`)
 
           console.log(`正在抓取第${i}部電影詳細資料...`)
-
+          
           data.id = i + 1
 
           data.time = movieTime[i]
@@ -81,6 +84,9 @@ async function movieScraper() {
       })
       .then(async () => {
         await browser.close()
+        await ScrapedDate.create({
+          date: momentDay
+        })
         console.log('完成~~')
         return movieDatas
       })
@@ -91,5 +97,6 @@ async function movieScraper() {
 
 module.exports = {
   movieScraper,
-  movieDatas
+  movieDatas,
+  totalLength
 }

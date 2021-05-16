@@ -17,12 +17,11 @@ app.engine(
   'handlebars',
   handlebars({
     defaultLayout: 'main.handlebars',
-    // helpers: require('./config/handlebars-helpers'),
+    // helpers: require('./config/handlebars-helpers')
   })
 );
 app.set('view engine', 'handlebars');
 app.use(express.static('public'))
-// app.use('/img', express.static(__dirname + '/img'))
 app.use(urlencoded({ extended: true }));
 app.use(methodOverride('_method'))
 app.use(cookieParser());

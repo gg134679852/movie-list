@@ -35,10 +35,10 @@ const movieListService = {
         })
     }
   },
-  movieDetailed: (req, res) => {
+  movieDetailed: (req, res, callback) => {
     const index = req.params.id - 1
     const renderData = movieDatas[index]
-    res.render('show', { renderData })
+    callback({renderData})
   }
 }
 

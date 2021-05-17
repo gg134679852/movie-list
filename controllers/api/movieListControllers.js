@@ -6,9 +6,9 @@ const movieListControllers = {
     })
   },
   movieDetailed: (req, res) => {
-    const index = req.params.id - 1
-    const renderData = movieDatas[index]
-    res.render('show', { renderData })
+    movieListService.movieDetailed(req,res,(data)=>{
+      res.json(data)
+    })
   }
 }
 

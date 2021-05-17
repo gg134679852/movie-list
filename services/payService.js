@@ -13,9 +13,10 @@ const payControllers = {
     .then(cart => {
       cart = cart || { items: [] }
       let totalPrice = cart.items.length > 0 ? cart.items.map(d => d.price * d.CartItem.quantity).reduce((a, b) => a + b) : 0
+      cart = cart.toJSON()
       return callback({
-        cart: cart,
-        totalPrice
+        cart,
+        totalPrice: totalPrice
       })
     })
   },
@@ -53,7 +54,7 @@ const payControllers = {
         })
     })
   },
-  subCartItem: (req, res) => {
+  subCartItem: (req, res, callback) => {
     CartItem.findByPk(req.params.id).then(cartItem => {
       cartItem.update({
         quantity: cartItem.quantity - 1 >= 1 ? cartItem.quantity - 1 : 1,
@@ -71,18 +72,18 @@ const payControllers = {
         })
     })
   },
-  getOrders: (req, res) => {
+  getOrders: (req, res, callback) => {
     Order.findAll(
       {
         nest: true,
-        include: [{ model: Product, as: 'items' }]}).then(orders => {
-      return res.render('orders', {
-        orders
+        include: [{ model: Product, as: 'items' }]})
+        .then(orders => {
+          return callback({ orders })
       })
-    })
-  },
-  postOrder: (req, res) => {
-    return Cart.findByPk(req.body.cartId, { include: 'items' }).then(cart => {
+    },
+  postOrder: (req, res, callback) => {
+    return Cart.findByPk(req.body.cartId, { include: 'items' })
+    .then(cart => {
       return Order.create({
         name: req.body.name,
         address: req.body.address,
@@ -91,7 +92,8 @@ const payControllers = {
         shipping_status: req.body.shipping_status,
         payment_status: req.body.payment_status,
         amount: req.body.amount,
-      }).then(order => {
+      })
+      .then(order => {
         const results = [];
         for (var i = 0; i < cart.items.length; i++) {
           results.push(
@@ -103,25 +105,24 @@ const payControllers = {
             })
           );
         }
-        return Promise.all(results).then(() =>
-          res.redirect('/orders')
-        );
-
+        return Promise.all(results).then(() =>{
+          return callback({ status: 'success', message: '' })
+        });
       })
     })
   },
-  cancelOrder: (req, res) => {
+  cancelOrder: (req, res, callback) => {
     return Order.findByPk(req.params.id, {}).then(order => {
       order.update({
         ...req.body,
         shipping_status: '-1',
         payment_status: '-1',
       }).then(order => {
-        return res.redirect('back')
+        return callback({ status: 'success', message: '' })
       })
     })
   },
-  getPayment: (req, res) => {
+  getPayment: (req, res, callback) => {
     console.log('===== getPayment =====')
     console.log(req.params.id)
     console.log('==========')
@@ -131,12 +132,14 @@ const payControllers = {
       order.update({
         ...req.body,
         sn: tradeInfo.MerchantOrderNo,
-      }).then(order => {
-        res.render('payment', { order, tradeInfo })
+      })
+      .then(order => {
+        order = order.toJSON()
+        return callback({ order, tradeInfo })
       })
     })
   },
-  spgatewayCallback: (req, res) => {
+  spgatewayCallback: (req, res, callback) => {
     console.log('===== spgatewayCallback =====')
     console.log(req.method)
     console.log(req.query)
@@ -157,7 +160,7 @@ const payControllers = {
         ...req.body,
         payment_status: 1,
       }).then(order => {
-        return res.redirect('/orders')
+        return callback({ status: 'success', message: '' })
       })
     })
 

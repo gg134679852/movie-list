@@ -18,7 +18,14 @@ router.post('/cartItem/:id/sub', payControllers.subCartItem)
 
 router.delete('/cartItem/:id', payControllers.deleteCartItem)
 
+router.get('/orders', payControllers.getOrders)
+
+router.post('/orders', payControllers.postOrder)
+
 router.post('/orders/:id', payControllers.cancelOrder)
 
+router.get('/orders/:id/payment', payControllers.getPayment)
+
+router.post('/spgateway/callback', payControllers.spgatewayCallback)
 
 module.exports = router

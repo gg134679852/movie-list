@@ -12,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      {{#each cart.items}}
+      {{#each cartRenderData.items}}
       <tr>
         <td>
           <div style="display: flow-root;">
@@ -75,7 +75,7 @@
           <label for="address">Address</label>
           <input type="text" class="form-control" id="address" placeholder="Enter address" name="address">
         </div>
-        <input type="hidden" name="cartId" value="{{cart.id}}">
+        <input type="hidden" name="cartId" value="{{cartRenderData.id}}">
         <input type="hidden" name="amount" value="{{totalPrice}}">
         <input type="hidden" name="shipping_status" value="0">
         <input type="hidden" name="payment_status" value="0">

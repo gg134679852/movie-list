@@ -11,13 +11,15 @@ const movieListService = {
     if (movieDatas.length === totalLength[0]) {
       if (req.session.cartId) {
         return Cart.findByPk(req.session.cartId, { include: [{ model: Product, as: 'items' }] }
-        ).then(cart => {
+        )
+        .then(cart => {
           cart = cart || { items: [] }
           let totalPrice = cart.items.length > 0 ? cart.items.map(d => d.price * d.CartItem.quantity).reduce((a, b) => a + b) : 0
+          cart = cart.toJSON()
           return callback({
             movieDatas,
-            cart: cart.toJSON(),
-            totalPrice,
+            cart,
+            totalPrice: totalPrice,
           })
         })
       } else {

@@ -1,53 +1,38 @@
-const db = require('../models')
+const db = require('../../models')
 const Product = db.Product
 const Cart = db.Cart
 const CartItem = db.CartItem
 const Order = db.Order
 const OrderItem = db.OrderItem
 const Payment = db.Payment
-const { getTradeInfo, create_mpg_aes_decrypt} = require('../public/javascript/tradeinfo')
+const { getTradeInfo, create_mpg_aes_decrypt} = require('../../public/javascript/tradeinfo')
 
-const payService = require('../services/payService')
+const payService = require('../../services/payService')
 
 const payControllers = {
-  renderCart:(req,res)=>{
-    res.render('cart')
-  },
   getCart: (req, res) => {
     payService.getCart(req,res,(data)=>{
-      const cartRenderData = data.cart
-      const totalPrice = data.totalPrice
-      res.render('cart', { cartRenderData, totalPrice})
+      res.json(data)
     })
   },
   postCart: async (req, res, callback) => {
     payService.postCart(req, res, (data) => {
-      if (data['status'] === 'success') {
-        return res.redirect('back')
-      }
-    })
-  },
+      res.json(data)
+  })
+},
   addCartItem: (req, res) => {
     payService.addCartItem(req, res, (data) => {
-      if (data['status'] === 'success') {
-        return res.redirect('back')
-      }
+      res.json(data)
     })
   },
   subCartItem: (req, res) => {
     payService.subCartItem(req, res, (data) => {
-      if (data['status'] === 'success') {
-        return res.redirect('back')
-      }
+      res.json(data)
     })
   },
   deleteCartItem: (req, res) => {
-    payService.deleteCartItem(req,res,(data)=>{
-      if (data['status'] === 'success') {
-        return res.redirect('/movieList')
-    }
-  })
-},
+    payService.deleteCartItem(req, res, (data) => { res.json(data)})
+  },
   getOrders: (req, res) => {
     Order.findAll(
       {

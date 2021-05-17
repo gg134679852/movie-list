@@ -7,47 +7,70 @@ const OrderItem = db.OrderItem
 const Payment = db.Payment
 const { getTradeInfo, create_mpg_aes_decrypt} = require('../public/javascript/tradeinfo')
 
-const payService = require('../services/payService')
-
 const payControllers = {
-  renderCart:(req,res)=>{
-    res.render('cart')
-  },
-  getCart: (req, res) => {
-    payService.getCart(req,res,(data)=>{
-      const cartRenderData = data.cart
-      const totalPrice = data.totalPrice
-      res.render('cart', { cartRenderData, totalPrice})
+  getCart: (req, res,callback) => {
+    return Cart.findByPk(req.session.cartId, { include: [{ model: Product, as: 'items' }] })
+    .then(cart => {
+      cart = cart || { items: [] }
+      let totalPrice = cart.items.length > 0 ? cart.items.map(d => d.price * d.CartItem.quantity).reduce((a, b) => a + b) : 0
+      return callback({
+        cart: cart,
+        totalPrice
+      })
     })
   },
   postCart: async (req, res, callback) => {
-    payService.postCart(req, res, (data) => {
-      if (data['status'] === 'success') {
-        return res.redirect('back')
-      }
-    })
+    try {
+      const cart = await Cart.findOrCreate({ where: { id: req.session.cartId || 0 } })
+      const { id: CartId } = cart[0].dataValues
+      let cartItem = await CartItem.findOrCreate({
+        where: {
+          CartId,
+          ProductId: req.body.productId
+        },
+        default: {
+          CartId,
+          ProductId: req.body.productId,
+        }
+      })
+      await cartItem[0].update({
+        quantity: (cartItem[0].dataValues.quantity || 0) + 1
+      })
+      req.session.cartId = CartId
+      req.session.save()
+      callback({ status: 'success', message: '' })
+    } catch (error) {
+      console.log(error)
+    }
   },
-  addCartItem: (req, res) => {
-    payService.addCartItem(req, res, (data) => {
-      if (data['status'] === 'success') {
-        return res.redirect('back')
-      }
+  addCartItem: (req, res, callback) => {
+    CartItem.findByPk(req.params.id).then(cartItem => {
+      cartItem.update({
+        quantity: cartItem.quantity + 1,
+      })
+        .then((cartItem) => {
+          callback({ status: 'success', message: '' })
+        })
     })
   },
   subCartItem: (req, res) => {
-    payService.subCartItem(req, res, (data) => {
-      if (data['status'] === 'success') {
-        return res.redirect('back')
-      }
+    CartItem.findByPk(req.params.id).then(cartItem => {
+      cartItem.update({
+        quantity: cartItem.quantity - 1 >= 1 ? cartItem.quantity - 1 : 1,
+      })
+        .then((cartItem) => {
+          return callback({ status: 'success', message: '' })
+        })
     })
   },
-  deleteCartItem: (req, res) => {
-    payService.deleteCartItem(req,res,(data)=>{
-      if (data['status'] === 'success') {
-        return res.redirect('/movieList')
-    }
-  })
-},
+  deleteCartItem: (req, res,callback) => {
+    CartItem.findByPk(req.params.id).then(cartItem => {
+      cartItem.destroy()
+        .then((cartItem) => {
+          return callback({ status: 'success', message: '' })
+        })
+    })
+  },
   getOrders: (req, res) => {
     Order.findAll(
       {

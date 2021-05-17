@@ -25,7 +25,7 @@ router.get('/orders', payControllers.getOrders)
 
 router.post('/orders', payControllers.postOrder)
 
-router.delete('/orders/:id', payControllers.cancelOrder)
+router.post('/orders/:id', payControllers.cancelOrder)
 
 router.get('/orders/:id/payment', payControllers.getPayment)
 

@@ -1,9 +1,3 @@
-const db = require('../models')
-const Product = db.Product
-const Cart = db.Cart
-const ScrapedDate = db.ScrapedDate
-const moment = require('moment')
-const momentDay = moment().format('L')
 const { movieDatas, totalLength} = require('../public/movie-data')
 const movieListService = require('../services/movieListService')
 
@@ -14,12 +8,14 @@ const movieListControllers = {
       res.render('movieList', { loading })
       movieListService.getMovie(req, res, (data) => {
         const renderData = data.movieDatas
-        res.render('movieList', { renderData })
+        res.render('movieList', {renderData})
       })
     } else {
     movieListService.getMovie(req,res,(data)=>{
       const renderData = data.movieDatas
-        res.render('movieList', { renderData })
+      const renderCart = data.cart
+      const totalPrice = data.totalPrice
+      res.render('movieList', { renderData, renderCart, totalPrice})
       })
     }
  },

@@ -1,7 +1,7 @@
 
-{{#if movieDatas}}
+{{#if loading}}
+<meta http-equiv="refresh" content="15">
 {{else}}
-<meta http-equiv="refresh" content="30">
 {{/if}}
 <!-- ./views/index.handlebars -->
 <div class="container-lg mt-5">
@@ -22,8 +22,8 @@
   <!-- movie list -->
   <div class="d-flex">
   <div class="row" id="data-panel">
-    {{#if movieDatas}}
-      {{#each movieDatas}}
+    {{#if renderData}}
+      {{#each renderData}}
       <div class="col-sm-3">
         <div class="mb-2">
           <div class="card">
@@ -50,7 +50,8 @@
         </div>
       </div>
       {{/each}}
-      {{else}}
+      {{/if}}
+      {{#if loading}}
       <div class="text-center">
       <h1>正在讀取資料 請稍後</h1>
       <div class="loader">

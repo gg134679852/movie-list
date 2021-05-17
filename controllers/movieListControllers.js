@@ -4,37 +4,25 @@ const Cart = db.Cart
 const ScrapedDate = db.ScrapedDate
 const moment = require('moment')
 const momentDay = moment().format('L')
-const { movieDatas, totalLength,movieScraper} = require('../public/movie-data')
+const { movieDatas, totalLength} = require('../public/movie-data')
+const movieListService = require('../services/movieListService')
+
 const movieListControllers = {
-  getMovie: (req, res) => {  
-    if (movieDatas.length === totalLength[0]){
-      if (req.session.cartId) {
-        return Cart.findByPk(req.session.cartId, { include: [{ model: Product, as: 'items' }] }
-        ).then(cart => {
-          cart = cart || { items: [] }
-          let totalPrice = cart.items.length > 0 ? cart.items.map(d => d.price * d.CartItem.quantity).reduce((a, b) => a + b) : 0
-          return res.render('movieList', {
-            movieDatas,
-            cart: cart.toJSON(),
-            totalPrice,
-          })
-        })
-      } else {
-        res.render('movieList', { movieDatas })
-      }
-    }else{
-      res.render('movieList')
-      ScrapedDate.findAll({
-        raw: true,
-        nest: true
+  getMovie: (req, res) => {
+    const loading = 'loading'
+    if (movieDatas.length === 0 || movieDatas.length !== totalLength[0]) {
+      res.render('movieList', { loading })
+      movieListService.getMovie(req, res, (data) => {
+        const renderData = data.movieDatas
+        res.render('movieList', { renderData })
       })
-        .then((date) => {
-          if (date[0].date !== momentDay || movieDatas.length === 0) {
-            movieScraper()
-          }
-        })
+    } else {
+    movieListService.getMovie(req,res,(data)=>{
+      const renderData = data.movieDatas
+        res.render('movieList', { renderData })
+      })
     }
-  },
+ },
   movieDetailed: (req, res)=>{
     const index = req.params.id -1
     const renderData = movieDatas[index]

@@ -1,6 +1,10 @@
 
 {{#if loading}}
-<meta http-equiv="refresh" content="15">
+<meta http-equiv="refresh" content="5">
+{{else}}
+{{/if}}
+{{#if totalmovieLength}}
+<meta http-equiv="refresh" content="5">
 {{else}}
 {{/if}}
 <!-- ./views/index.handlebars -->
@@ -51,9 +55,15 @@
       </div>
       {{/each}}
       {{/if}}
-      {{#if loading}}
       <div class="text-center">
+      {{#if loading}}
       <h1>正在讀取資料 請稍後</h1>
+      <div class="loader">
+        <img src="http://static.demilked.com/wp-content/uploads/2016/06/gif-animations-replace-loading-screen-14.gif"
+          alt="Loading..." />
+      </div>
+      {{else}}
+      <h1>總共有{{totalmovieLength}}部電影,正在抓取第{{movieDataLength}}部電影資料</h1>
       <div class="loader">
         <img src="http://static.demilked.com/wp-content/uploads/2016/06/gif-animations-replace-loading-screen-14.gif"
           alt="Loading..." />

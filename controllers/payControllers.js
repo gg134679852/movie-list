@@ -13,6 +13,9 @@ const payControllers = {
   },
   postCart: async (req, res, callback) => {
     payService.postCart(req, res, (data) => {
+      if (data['erro'] === 'erro') {
+        return res.json({ status: 'erro', message: '超出購買上限' })
+      }
       if (data['status'] === 'success') {
         return res.redirect('back')
       }
@@ -20,22 +23,25 @@ const payControllers = {
   },
   addCartItem: (req, res) => {
     payService.addCartItem(req, res, (data) => {
+      if (data['erro'] === 'erro') {
+        return res.json({ status: 'erro', message: '超出購買上限' })
+      }
       if (data['status'] === 'success') {
-        return res.redirect('back')
+        return res.json({ status: 'success', message: '' })
       }
     })
   },
   subCartItem: (req, res) => {
     payService.subCartItem(req, res, (data) => {
       if (data['status'] === 'success') {
-        return res.redirect('back')
+        return res.json({ status: 'success', message: '' })
       }
     })
   },
   deleteCartItem: (req, res) => {
     payService.deleteCartItem(req,res,(data)=>{
       if (data['status'] === 'success') {
-        return res.redirect('/movieList')
+        return res.json({ status: 'success', message: '' })
     }
   })
 },

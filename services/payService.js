@@ -35,7 +35,7 @@ const payControllers = {
         }
       })
       await cartItem[0].update({
-        quantity: (cartItem[0].dataValues.quantity || 0) + 1
+        quantity: (cartItem[0].dataValues.quantity ? cartItem[0].dataValues.quantity + 0 : 1  )
       })
       req.session.cartId = CartId
       req.session.save()
@@ -44,8 +44,11 @@ const payControllers = {
       console.log(error)
     }
   },
-  addCartItem: (req, res, callback) => {
+  addCartItem: (req, res, callback) => { 
     CartItem.findByPk(req.params.id).then(cartItem => {
+      if (cartItem.quantity >= 5){
+        return callback({ status: 'erro', message: '超出購買上限' })
+      }
       cartItem.update({
         quantity: cartItem.quantity + 1,
       })

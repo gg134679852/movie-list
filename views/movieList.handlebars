@@ -33,7 +33,7 @@
             <div class="card-body">
               <h5 class="card-title">{{this.movieTitle}}</h5>
               <br>
-              <h5>250$</h5>
+              <h5>$250</h5>
             </div>
             <div class="card-footer">
               <a href="/movieList/{{this.id}}/detailed">
@@ -62,45 +62,40 @@
       {{/if}}
       </div>
       {{#if totalPrice}}
-        <nav class="col-md-3 d-none d-md-block sidebar ml-3 ">
+        <nav class="col-md-3 d-none d-md-block sidebar ml-3 "id="cart">
           <div class="sidebar-sticky">
-            <ul class="list-group list-group">
-              <li class="list-group-item">
-                {{#each renderCart.items}}
+            <ul class="list-group"id="cartItemPanel">
+              {{#each renderCart.items}}
+              <li class="list-group-item"id="itemCard" data-id ={{this.CartItem.id}}>
+                <div>
                 <div class="row no-gutters">
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">{{this.name}}</h5>
                       <p>${{this.price}}</p>
                       <div class="btn-group">
-                        <form action="/cartItem/{{this.CartItem.id}}/add" method="POST">
-                          <button type="submit" class="btn btn-sm btn-outline-secondary">+</button>
-                        </form>
-                        <span style="margin: 0 20px;">{{this.CartItem.quantity}}</span>
-                        <form action="/cartItem/{{this.CartItem.id}}/sub" method="POST">
-                          <button type="submit" class="btn btn-sm btn-outline-secondary">-</button>
-                        </form>
-        
-                        <form action="/cartItem/{{this.CartItem.id}}?_method=DELETE" method="POST">
-                          <button type="submit" class="btn btn-link">
+                          <button type="submit" class="btn btn-sm btn-outline-secondary"id="add">+</button>
+                        <span style="margin: 0 20px;"id="quantity">{{this.CartItem.quantity}}</span>
+                          <button type="submit" class="btn btn-sm btn-outline-secondary" id="sub">-</button>
+                          <button type="submit" class="btn btn-link" id="del">
                             <i class="fas fa-trash"></i>
                           </button>
-                        </form>
-        
                       </div>
                     </div>
                   </div>
                 </div>
-                <hr>
-                {{/each}}
+                </div>
               </li>
+              {{/each}}
             </ul>
             <hr>
-            <li class="list-group-item">
-              Total: ${{totalPrice}}
-              <a href="/movieList/cart"><button class="btn btn-primary">結帳</button></a>
+            <li class="list-group-item d-flex">
+              <div class="d-flex" id="totalPrice">
+                <span>Total: $</span>
+                <span>{{totalPrice}}</span>
+              </div>
+              <a class="ml-4"href="/movieList/cart"><button class="btn btn-primary">購物車</button></a>
             </li>
-        
           </div>
         </nav>
       {{/if}}

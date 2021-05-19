@@ -18,6 +18,12 @@ router.post('/cartItem/:id/sub', payControllers.subCartItem)
 
 router.delete('/cartItem/:id', payControllers.deleteCartItem)
 
+router.post('/cart/:id/add', payControllers.addCartItem)
+
+router.post('/cart/:id/sub', payControllers.subCartItem)
+
+router.delete('/cart/:id', payControllers.deleteCartItem)
+
 router.get('/orders', payControllers.getOrders)
 
 router.post('/orders', payControllers.postOrder)

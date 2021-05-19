@@ -7,11 +7,9 @@
         <th scope="col">playdate</th>
         <th scope="col">Price</th>
         <th scope="col">quantity</th>
-        <th scope="col">Subtotal</th>
-        <th scope="col">#</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="tableItemPanel">
       {{#each cartRenderData.items}}
       <tr>
         <td>
@@ -29,31 +27,17 @@
         </td>
         <td>
           <div style="display: flex;">
-            <form action="/cartItem/{{this.CartItem.id}}/add" method="POST">
-              <button type="submit" class="btn btn-sm btn-outline-secondary">+</button>
-            </form>
-            <span style="margin: 0 20px;">
+            <span style="margin: 0 20px;"id="quantity">
               {{this.CartItem.quantity}}
             </span>
-            <form action="/cartItem/{{this.CartItem.id}}/sub" method="POST">
-              <button type="submit" class="btn btn-sm btn-outline-secondary">-</button>
-            </form>
           </div>
-        </td>
-        <td>{{this.price}} * {{this.CartItem.quantity}}</td>
-        <td>
-          <form action="/cartItem/{{this.CartItem.id}}?_method=DELETE" method="POST">
-            <button type="submit" class="btn btn-link">
-              <i class="fas fa-trash"></i>
-            </button>
-          </form>
         </td>
       </tr>
       {{/each}}
     </tbody>
   </table>
-  <div class="d-flex justify-content-end">
-    <h2>Total: </h2>
+  <div class="d-flex justify-content-end"id="totalPrice">
+    <h2>Total: $</h2>
     <h2>{{totalPrice}}</h2>
   </div>
   <div class="row">

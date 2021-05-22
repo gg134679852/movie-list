@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   HistoryOrderItem.init({
     name: DataTypes.STRING,
-    date: DataTypes.STRING
+    date: DataTypes.STRING,
+    OrderId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'HistoryOrderItem',

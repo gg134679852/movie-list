@@ -4,8 +4,12 @@ const Cart = db.Cart
 const CartItem = db.CartItem
 const Order = db.Order
 const OrderItem = db.OrderItem
+const HistoryOrder = db.HistoryOrder
+const HistoryOrderItem = db.HistoryOrderItem
 const Payment = db.Payment
 const { getTradeInfo, create_mpg_aes_decrypt} = require('../public/javascript/tradeinfo')
+const moment = require('moment')
+const momentDay = moment().format('L')
 
 const payControllers = {
   getCart: (req, res,callback) => {
@@ -169,6 +173,12 @@ const payControllers = {
       })
       .then((cart)=>{
         cart = cart.toJSON()
+        HistoryOrder.creat({
+          data: momentDay,
+          UserId:req.user.id
+        })
+      })
+        .then((cart)=>{
         console.log(cart)
       })
       .then(order => {

@@ -15,7 +15,17 @@
 <body>
   <nav class="navbar navbar-dark bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="/movieList">Movie List</a>
+      {{#if renderData}}
+    <a class="navbar-brand" href="/movieList">Movie List</a>
+      {{else}}
+      <a class="navbar-brand" href="#">Movie List</a>
+      {{/if}}
+      {{#if renderData}}
+      <form action="/movieList/signin" method="POST">
+        <button type="submit" class="btn btn-success">登陸</button>
+      </form>
+      {{else}}
+      {{/if}}
     </div>
   </nav>
   {{{ body }}}

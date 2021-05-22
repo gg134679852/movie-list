@@ -95,6 +95,7 @@ const payControllers = {
         shipping_status: req.body.shipping_status,
         payment_status: req.body.payment_status,
         amount: req.body.amount,
+        UserId: req.user.id
       })
       .then(order => {
         const results = [];
@@ -162,7 +163,15 @@ const payControllers = {
       orders[0].update({
         ...req.body,
         payment_status: 1,
-      }).then(order => {
+      })
+      .then(()=>{
+        return Cart.findByPk(req.session.cartId, { include: [{ model: Product, as: 'items' }] })
+      })
+      .then((cart)=>{
+        cart = cart.toJSON()
+        console.log(cart)
+      })
+      .then(order => {
         return callback({ status: 'success', message: '' })
       })
     })

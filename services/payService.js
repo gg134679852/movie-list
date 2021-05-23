@@ -88,7 +88,7 @@ const payControllers = {
         nest: true,
         include: [{ model: Product, as: 'items' }]})
         .then(orders => {
-          return callback(orders)
+          return callback({ orders })
       })
     },
   postOrder: (req, res, callback) => {

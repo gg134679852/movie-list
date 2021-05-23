@@ -37,11 +37,20 @@
       <li>address: {{this.dataValues.address}}</li>
       <li>phone: {{this.dataValues.phone}}</li>
     </ul>
+
+      {{#ifCond this.dataValues.payment_status '1'}}
+      <div style="display: flex; justify-content: space-around;">
+      <span>已付款</span>
+      </div>
+      {{/ifCond}}
+    {{#ifCond this.dataValues.payment_status '0'}}
     <div style="display: flex; justify-content: space-around;">
-      <form action="/orders/{{this.dataValues.id}}/del?_method=DELETE" method="POST">
-        <button type="submit" class="btn btn-primary">取消訂單</button>
-      </form>
+    <form action="/orders/{{this.dataValues.id}}/del?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-primary">取消訂單</button>
+    </form>
       <a href="/orders/{{this.dataValues.id}}/payment"><button class="btn btn-primary">立即付款</button></a>
+      </div>
+      {{/ifCond}}
     </div>
   </div>
 </div>

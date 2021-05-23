@@ -47,8 +47,8 @@ const payControllers = {
 },
   getOrders: (req, res) => {
     payService.getOrders(req, res, (data) => {
-      console.log(data)
-      return res.render('orders', { orders})
+      const orders = data.orders
+      return res.render('orders', {orders})
     })
   },
   postOrder: (req, res) => {

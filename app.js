@@ -19,7 +19,7 @@ app.engine(
   'handlebars',
   handlebars({
     defaultLayout: 'main.handlebars',
-    // helpers: require('./config/handlebars-helpers')
+    helpers: require('./config/handlebars-helpers')
   })
 );
 app.set('view engine', 'handlebars');

@@ -31,7 +31,7 @@ const movieListService = {
         nest: true
       })
         .then((date) => {
-          if (date[0].date !== momentDay || movieDatas.length === 0) {
+          if (movieDatas.length === 0) {
             movieScraper()
           }
         })

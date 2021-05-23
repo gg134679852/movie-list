@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'OrderId'
       });
       Order.hasMany(models.Payment)
+      Order.belongsTo(models.User)
     }
   };
   Order.init({
@@ -24,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     amount: DataTypes.INTEGER,
     shipping_status: DataTypes.STRING,
     payment_status: DataTypes.STRING,
+    UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Order',

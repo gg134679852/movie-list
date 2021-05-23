@@ -22,11 +22,11 @@ router.post('/cartItem/:id/sub', payControllers.subCartItem)
 
 router.delete('/cartItem/:id', payControllers.deleteCartItem)
 
+router.delete('/orders/:id/del', authenticated, payControllers.cancelOrder)
+
 router.get('/orders', authenticated,payControllers.getOrders)
 
 router.post('/orders', authenticated,payControllers.postOrder)
-
-router.post('/orders/:id', authenticated,payControllers.cancelOrder)
 
 router.get('/orders/:id/payment', authenticated,payControllers.getPayment)
 

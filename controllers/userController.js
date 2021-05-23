@@ -36,25 +36,13 @@ const userController = {
 
   signIn: (req, res) => {
     req.flash('success_messages', '成功登入！')
-    console.log(req.user)
     res.redirect('/')
   },
 
   logout: (req, res) => {
     req.flash('success_messages', '登出成功！')
     req.logout()
-    res.redirect('/signin')
-  },
-  proFile: (req, res) => {
-    return User.findByPk(req.params.id, {
-      include: [
-        { model: Comment, include: [Restaurant] }
-      ]
-    })
-      .then((user) => {
-        let commentLength = user.toJSON().Comments.length
-        res.render('profile', { profile: user.toJSON(), restaurant: user.toJSON().Comments,commentLength})
-      })
+    res.redirect('/')
   }
 }
 module.exports = userController

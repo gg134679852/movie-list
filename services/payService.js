@@ -82,10 +82,13 @@ const payControllers = {
   getOrders: (req, res, callback) => {
     Order.findAll(
       {
+        where: {
+          UserId: req.user.id
+        },
         nest: true,
         include: [{ model: Product, as: 'items' }]})
         .then(orders => {
-          return callback({ orders })
+          return callback(orders)
       })
     },
   postOrder: (req, res, callback) => {
@@ -121,11 +124,8 @@ const payControllers = {
   },
   cancelOrder: (req, res, callback) => {
     return Order.findByPk(req.params.id, {}).then(order => {
-      order.update({
-        ...req.body,
-        shipping_status: '-1',
-        payment_status: '-1',
-      }).then(order => {
+      order.destroy()
+      .then(order => {
         return callback({ status: 'success', message: '' })
       })
     })
@@ -167,19 +167,6 @@ const payControllers = {
       orders[0].update({
         ...req.body,
         payment_status: 1,
-      })
-      .then(()=>{
-        return Cart.findByPk(req.session.cartId, { include: [{ model: Product, as: 'items' }] })
-      })
-      .then((cart)=>{
-        cart = cart.toJSON()
-        HistoryOrder.creat({
-          data: momentDay,
-          UserId:req.user.id
-        })
-      })
-        .then((cart)=>{
-        console.log(cart)
       })
       .then(order => {
         return callback({ status: 'success', message: '' })

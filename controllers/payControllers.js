@@ -47,7 +47,7 @@ const payControllers = {
 },
   getOrders: (req, res) => {
     payService.getOrders(req, res, (data) => {
-      const orders = data.orders
+      console.log(data)
       return res.render('orders', { orders})
     })
   },
@@ -59,7 +59,7 @@ const payControllers = {
     })
   },
   cancelOrder: (req, res) => {
-    payService.postOrder(req, res, (data) => {
+    payService.cancelOrder(req, res, (data) => {
       if (data['status'] === 'success') {
         return res.redirect('back')
       }

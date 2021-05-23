@@ -31,11 +31,11 @@ router.post('/cartItem/:id/sub', payControllers.subCartItem)
 
 router.delete('/cartItem/:id', payControllers.deleteCartItem)
 
+router.delete('/orders/:id/del', authenticated, payControllers.cancelOrder)
+
 router.get('/orders', authenticated,payControllers.getOrders)
 
 router.post('/orders', authenticated,payControllers.postOrder)
-
-router.post('/orders/:id', authenticated,payControllers.cancelOrder)
 
 router.get('/orders/:id/payment', authenticated, payControllers.getPayment)
 
@@ -46,6 +46,6 @@ router.post('/movieList/signup', userController.signUp)
 router.get('/movieList/signin', userController.signInPage)
 router.post('/movieList/signin', passport.authenticate('local', { failureRedirect: '/movieList/signin', failureFlash: true }), userController.signIn)
 
-router.get('/movieList/logout', userController.logout)
+router.get('/logout', userController.logout)
 
 module.exports = router

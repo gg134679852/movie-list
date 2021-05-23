@@ -15,16 +15,20 @@
 <body>
   <nav class="navbar navbar-dark bg-dark">
     <div class="container">
-      {{#if renderData}}
     <a class="navbar-brand" href="/movieList">Movie List</a>
+      {{#if user}}
+      <div class="d-flex">
+      <form action="/orders" method="GET">
+        <button type="submit" class="btn btn-success">購買紀錄</button>
+      </form>
+      <form action="/logout" method="GET">
+        <button type="submit" class="btn btn-success">登出</button>
+      </form>
+      </div>
       {{else}}
-      <a class="navbar-brand" href="#">Movie List</a>
-      {{/if}}
-      {{#if renderData}}
       <form action="/movieList/signin" method="POST">
         <button type="submit" class="btn btn-success">登陸</button>
       </form>
-      {{else}}
       {{/if}}
     </div>
   </nav>

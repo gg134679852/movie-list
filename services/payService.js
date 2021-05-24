@@ -94,6 +94,8 @@ const payControllers = {
   postOrder: (req, res, callback) => {
     return Cart.findByPk(req.body.cartId, { include: 'items' })
     .then(cart => {
+      const phoneno = /^\d{10}$/
+      if (req.body.phone.match(phoneno)) {
       return Order.create({
         name: req.body.name,
         address: req.body.address,
@@ -120,6 +122,10 @@ const payControllers = {
           return callback({ status: 'success', message: '' })
         });
       })
+    }else{
+        return callback({
+          status: 'erro', message: '請確認電話號碼是否為數字,並重新輸入電話號碼',})
+    }
     })
   },
   cancelOrder: (req, res, callback) => {

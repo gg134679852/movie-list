@@ -55,6 +55,9 @@ const payControllers = {
     payService.postOrder(req, res, (data) => {
       if (data['status'] === 'success') {
         return res.redirect('/orders')
+      }else{
+        req.flash('error_messages', data.message)
+        res.redirect('back')
       }
     })
   },

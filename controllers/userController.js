@@ -11,7 +11,7 @@ const userController = {
   signUp: (req, res) => {
     if (req.body.passwordCheck !== req.body.password) {
       req.flash('error_messages', '兩次密碼輸入不同！')
-      return res.redirect('/signup')
+      return res.redirect('/movieList/signup')
     } else {
       User.findOne({ where: { email: req.body.email } }).then(user => {
         if (user) {
@@ -36,13 +36,13 @@ const userController = {
 
   signIn: (req, res) => {
     req.flash('success_messages', '成功登入！')
-    res.redirect('/')
+    res.redirect('/movieList')
   },
 
   logout: (req, res) => {
     req.flash('success_messages', '登出成功！')
     req.logout()
-    res.redirect('/')
+    res.redirect('/movieList')
   }
 }
 module.exports = userController

@@ -16,7 +16,7 @@ const userController = {
       User.findOne({ where: { email: req.body.email } }).then(user => {
         if (user) {
           req.flash('error_messages', '信箱重複！')
-          return res.redirect('/signup')
+          return res.redirect('/movieList/signup')
         } else {
           User.create({
             name: req.body.name,

@@ -13,6 +13,8 @@
 - sequelize: 6.6.2
 - mysql2: 2.2.5
 - method-override: 3.0.0
+## 爬蟲過程
+![動畫4](https://user-images.githubusercontent.com/77142558/125231391-3d73a080-e30d-11eb-841f-9ca1e14f40a7.gif)
 ## 安裝與執行 (installation and execution)
 1. 選定一個資料夾，用來存放本專案。開啟終端機，移動至該資料夾，下載本專案
 ```

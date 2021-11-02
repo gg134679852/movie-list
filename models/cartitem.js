@@ -4,8 +4,7 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class CartItem extends Model {
-    static associate(models) {
-      
+    static associate(models) { 
     }
   };
   CartItem.init({

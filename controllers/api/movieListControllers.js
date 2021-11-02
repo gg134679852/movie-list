@@ -5,6 +5,26 @@ const movieListControllers = {
       res.json(data)
     })
   },
+  searchMovie:(req, res)=>{
+    movieListService.searchMovie(req,res,(data)=>{
+      res.json(data)
+    })
+  },
+  getFavoriteMovies:(req, res) => {
+    movieListService.getFavoriteMovies(req,res,(data)=>{
+      res.json(data)
+    })
+  },
+  addFavoriteMovie:(req, res) => {
+    movieListService.addFavoriteMovie(req,res,(data)=>{
+      res.json(data)
+    })
+  },
+  removeFavoriteMovie:(req, res)=>{
+    movieListService.removeFavoriteMovie(req,res,(data)=>{
+      res.json(data)
+    })
+  },
   movieDetailed: (req, res) => {
     movieListService.movieDetailed(req,res,(data)=>{
       res.json(data)
